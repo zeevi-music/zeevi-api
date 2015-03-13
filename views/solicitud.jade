@@ -10,7 +10,7 @@ html
       .prof-img-small(id='profile-img crop')
         img(src='img/profile/mastodon.jpg')
       #data-container.data
-        p#section_name Solicitudes
+        p#section-name Solicitudes
     .section-container
       // Aquí irá el contenido de las secciones.
       .query-container
@@ -31,10 +31,3 @@ html
         | Hola aquí estan tus datos.
       .query-container
         | Hola aquí estan tus datos.
-    script.
-      $(window).scroll(function(){
-      if($(window).scrollTop() >= $('#data-container').outerHeight()) {
-      // put content here for if the page has scrolled 200 pixels
-      alert("Scroleado");
-      }
-      });
