@@ -8,10 +8,7 @@ html
     link(rel='stylesheet', href='css/style.css')
     script(src='js/vendor/modernizr.js')
   body
-    header.header-signup
-      .row
-        .large-12.columns
-          h3 zeevi
+    include header
     br
     br
     .row
@@ -46,7 +43,7 @@ html
         .row
           .large-12.columns
             p
-              | Do you already have a zeevi account? 
-              a(href='index.html') Log in.
+              | Do you already have a zeevi account?
+              a(href='../login') Log in.
     .footer
       // footer

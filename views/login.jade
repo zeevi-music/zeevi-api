@@ -10,10 +10,7 @@ html.no-js(lang='en')
     script(src='js/vendor/modernizr.js')
     script(src='js/angular/angular.min.js')
   body
-    header.header-login
-      .row
-        .large-12.columns
-          h3 zeevi
+    include header
     .row.title-login
       .small-6.large-centered.columns.bound
         h1
@@ -31,13 +28,13 @@ html.no-js(lang='en')
       .row
         .small-6.large-6.small-centered.large-centered.columns
           p
-            | Forgot you password? 
+            | Forgot you password?
             a(href='index.html') Reset Password
       .row
         .small-6.large-6.small-centered.large-centered.columns
           p
-            | Don't have an account? 
-            a(href='signup.html') Sign up.
+            | Don't have an account?
+            a(href='../signup') Sign up.
     .footer
       // Footer code here
     script(src='js/vendor/jquery.js')
