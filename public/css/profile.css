@@ -1,103 +1,39 @@
-.top{
-  background: #00b2ca;
-  position: fixed;
-  right: 0;
-  left: 0;
-  top: 0;
-  height: 200px;
-  z-index: 10;
-  box-shadow: 0px 1px 5px #555;
-  overflow: hidden;
-}
-
-.head-image{
-  width: 100%;
-  opacity: .08;
-}
-
-.top .data{
-  color: whitesmoke;
-  position: fixed;
-  top: 70px;
-  left: 290px;
-  font-family: 'Roboto Slab', serif;
-}
-
-.section-container{
-  background: white;
-  z-index: 5;
-  position: fixed;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  top: 195;
-  overflow-y: auto;
-  padding-left: 3%;
-  padding-right: 3%;
-  width: 100%;
-}
-
-.prof-img{
-  background: purple;
-  position: fixed;
-  top: 70px;
-  left: 8%;
-  width: 125px;
-  height: 125px;
-  border-radius: 50%;
-  border: 30px;
-  overflow: hidden;
-}
-
-.prof-img img{
-  height: 100%;
-}
-
-#band_name{
-  color: white;
-  font-size: 35px;
-}
-
-#band_data{
-  color: antiquewhite;
-}
-
-@media all and (max-width: 1000px) {
-    #data-container{
-        margin-left: 0px;
-        left: 270px;
-    }
-}
-
-@media all and (max-width: 750px) {
-    #data-container{
-        margin-left: 0px;
-        left: 230px;
-    }
-}
-
-@media all and (max-width: 500px) {
-    #data-container{
-        margin-left: 0px;
-        left: 190px;
-    }
-    
-    #band_name{
-      color: white;
-    }
-  
-    #band_data{
-      position: fixed;
-      color: dimgrey;
-      top: 190px;
-    }
-}
-
 .basic-data-container{
-  background-color: #f2f2f2;
-  width: 90%;
-  height: 100px;
-  margin-top: 20px;
-  padding: 15px;
-  box-shadow:  0px 1px 5px #ccc;
+  color: red;
+  background-color: white;
+  padding: 30px;
+  overflow-y: scroll;
+  margin-top: 50px;
+}
+
+.data-section-left{
+  width: 250px;
+  height: 350px;
+  padding: 10px;
+  background: whitesmoke;
+  float:left;
+  margin-right: 15px;
+  box-shadow: 0px 1px 5px #ccc;
+}
+
+.data-section-right{
+  height: 350px;
+  padding: 10px;
+  background: whitesmoke;
+  overflow:hidden;
+  box-shadow: 0px 1px 5px #ccc;
+}
+
+@media all and (max-width: 780px) {
+    .data-section-left{
+      height: 100px;
+      margin: 0 auto;
+        width: 90%;
+      float: none;
+      margin-bottom: 30px;
+    }
+    .data-section-right{
+        margin: 0 auto;
+        width: 90%;
+    }
 }

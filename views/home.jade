@@ -11,7 +11,7 @@ html(lang='')
     script(src='/js/bar-script.js')
     script(src='/js/div_manager.js')
     title zeevi Home
-  body
+  body(onload='load_news()')
     #container.back
       // dentro de este div se cargará el contenido
     #cssmenu.top-bar
@@ -32,10 +32,4 @@ html(lang='')
               a(href='index.html') Cerrar Sesión
             li
               a(href='#') Otras opciones
-  script(type='text/javascript').
-    jQuery(document).ready(function() {
-    $('a.loader').click(function() {
-    $('#back').load('profile.html');
-    });
-    });
   html
