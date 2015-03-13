@@ -19,26 +19,26 @@ html
         form(method="post",action="/api/user/new")
           .row
             .large-12.columns
-              input(type='text', placeholder='Username')
+              input(type='text', name='username', placeholder='Username')
           .row
             .large-12.columns
-              input(type='password', placeholder='Password')
+              input(type='password', name='password' placeholder='password')
           .row
             .large-12.columns
-              input(type='text', placeholder='e-mail')
+              input(type='text', name='email' placeholder='e-mail')
           .row
             .large-12.columns
               label Register as:
-              input#band(type='radio', name='tipo', value='band')
+              input#band(type='radio', name='tipo', value='1')
               label(for='band') Band
-              input#venue(type='radio', name='tipo', value='venue')
+              input#venue(type='radio', name='tipo', value='2')
               label(for='venue') Venue
-              input#fan(type='radio', name='tipo', value='fan')
+              input#fan(type='radio', name='tipo', value='3')
               label(for='fan') Fan
           .row
             .large-12.columns
-              
-              input(type="submit", class="expand button",value="Sign up!") 
+
+              input(type="submit", class="expand button",value="Sign up!")
               p.small-word
                 | By pressing the "Sign up!" button, you acknowledge and agree to all of the terms and conditions.
         .row
