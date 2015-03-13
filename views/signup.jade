@@ -16,7 +16,7 @@ html
         h1
           | Sign up for zeevi_
       .small-6.large-centered.columns.bound
-        form
+        form(method="post",action="/api/user/new")
           .row
             .large-12.columns
               input(type='text', placeholder='Username')
@@ -29,15 +29,16 @@ html
           .row
             .large-12.columns
               label Register as:
-              input#band(type='radio', name='Type', value='band')
+              input#band(type='radio', name='tipo', value='band')
               label(for='band') Band
-              input#venue(type='radio', name='Type', value='venue')
+              input#venue(type='radio', name='tipo', value='venue')
               label(for='venue') Venue
-              input#fan(type='radio', name='Type', value='fan')
+              input#fan(type='radio', name='tipo', value='fan')
               label(for='fan') Fan
           .row
             .large-12.columns
-              a.expand.button(href='#') Sign up!
+              
+              input(type="submit", class="expand button",value="Sign up!") 
               p.small-word
                 | By pressing the "Sign up!" button, you acknowledge and agree to all of the terms and conditions.
         .row
