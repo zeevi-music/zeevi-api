@@ -5,7 +5,15 @@ var express = require('express'),
 /* GET home page. */
 
 router.get('/', function(req, res) {
-  res.status(200).json({ error: 'message' })
+  res.render('index')
+});
+
+router.get('/login', function(req, res) {
+  res.render('login');
+});
+
+router.get('/login', function(req, res) {
+  res.render('login');
 });
 
 module.exports = router;
