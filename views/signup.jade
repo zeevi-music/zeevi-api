@@ -1,24 +1,52 @@
-extends layout
-
-block content
-  .fondo
-    .index
-      p Registrate
-
-    .registro
-      form(method="post", action="/user")
-        //label Username: 
-        input(type="text",name="username",placeholder="Username")
-        br
-        //label Correo: 
-        input(type="text",name="correo",placeholder="Correo")
-        br
-        //label Contraseña: 
-        input(type="password",name="password",placeholder="Contraseña")
-        br
-        input(type="submit", class="submit")
-      br
-      br
-      a(href="/login",class="lin") Inicia Sesion
-
-
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title zeevi music
+    link(rel='stylesheet', href='css/foundation.css')
+    link(rel='stylesheet', href='css/signup.css')
+    link(rel='stylesheet', href='css/style.css')
+    script(src='js/vendor/modernizr.js')
+  body
+    header.header-signup
+      .row
+        .large-12.columns
+          h3 zeevi
+    br
+    br
+    .row
+      .small-6.large-centered.columns.bound
+        h1
+          | Sign up for zeevi_
+      .small-6.large-centered.columns.bound
+        form
+          .row
+            .large-12.columns
+              input(type='text', placeholder='Username')
+          .row
+            .large-12.columns
+              input(type='password', placeholder='Password')
+          .row
+            .large-12.columns
+              input(type='text', placeholder='e-mail')
+          .row
+            .large-12.columns
+              label Register as:
+              input#band(type='radio', name='Type', value='band')
+              label(for='band') Band
+              input#venue(type='radio', name='Type', value='venue')
+              label(for='venue') Venue
+              input#fan(type='radio', name='Type', value='fan')
+              label(for='fan') Fan
+          .row
+            .large-12.columns
+              a.expand.button(href='#') Sign up!
+              p.small-word
+                | By pressing the "Sign up!" button, you acknowledge and agree to all of the terms and conditions.
+        .row
+          .large-12.columns
+            p
+              | Do you already have a zeevi account? 
+              a(href='index.html') Log in.
+    .footer
+      // footer

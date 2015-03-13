@@ -1,20 +1,46 @@
-extends layout
-
-block content
-  .fondo
-    .index
-      p Inicia Sesion
-    
-    .registro
-      form(method="post", action="/api/user")
-        
-        input(type="text",name="username",placeholder="Username")
-        br
-         
-        input(type="password",name="password",placeholder="Contraseña")
-        br
-        input(type="submit", class="submit")
-      br
-      br
-      a(href="/signup",class="lin") Registrate
-
+doctype html
+html.no-js(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Login
+    link(rel='stylesheet', href='css/foundation.css')
+    link(rel='stylesheet', href='css/style.css')
+    link(rel='stylesheet', href='css/login.css')
+    script(src='js/vendor/modernizr.js')
+    script(src='js/angular/angular.min.js')
+  body
+    header.header-login
+      .row
+        .large-12.columns
+          h3 zeevi
+    .row.title-login
+      .small-6.large-centered.columns.bound
+        h1
+          | Sign in for zeevi_
+    form.login-form
+      .row
+        .small-6.large-6.small-centered.large-centered.columns
+          input(type='text', placeholder='Username')
+      .row
+        .small-6.large-6.small-centered.large-centered.columns
+          input(type='text', placeholder='Password')
+      .row
+        .small-6.large-6.small-centered.large-centered.columns
+          a.button.expand(href='home.html') Iniciar Sesión
+      .row
+        .small-6.large-6.small-centered.large-centered.columns
+          p
+            | Forgot you password? 
+            a(href='index.html') Reset Password
+      .row
+        .small-6.large-6.small-centered.large-centered.columns
+          p
+            | Don't have an account? 
+            a(href='signup.html') Sign up.
+    .footer
+      // Footer code here
+    script(src='js/vendor/jquery.js')
+    script(src='js/foundation.min.js')
+    script.
+      $(document).foundation();

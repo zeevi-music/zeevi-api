@@ -1,11 +1,49 @@
-extends layout
-
-block content
-  .fondo
-    .index    
-      p Bienvenido a EMX
-
-    .options(ng-controller="homeCtrl")
-      button(ng-click="login()") Inicia Sesion
-      br
-      button(ng-click="signup()") Registrate
+doctype html
+html.no-js(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title zeevi music
+    link(rel='stylesheet', href='css/foundation.css')
+    link(rel='stylesheet', href='css/landing.css')
+    link(rel='stylesheet', href='css/style.css')
+    script(src='js/vendor/modernizr.js')
+  body
+    header
+      .row
+        .large-2.large-offset-10.columns.medium-centered.columns
+          img(src='img/logo/zeevi_3.png')
+    .bg
+      img(src='img/photos/gif.gif')
+    //
+      <section class="container-landing-page">
+      <p>
+      Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit<br/>
+      <a href="signup.html" class="small button">Regístrate</a>&nbsp;
+      <a href="login.html" class="small button">Inicia Sesión</a>
+      </p>
+      <div class="nexus-img"><img src="img/Nexus5.png"> </div>
+      <div class="iphone-img"><img src="img/iphone.png"> </div>
+      </section>
+    section.container-landing-page
+      .row
+        .small-10.medium-5.large-5.small-centered.large-uncentered.medium-uncentered.columns
+          p
+            | Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit
+          br
+          a.small.button(href='signup.html') Regístrate
+          a.small.button(href='login.html') Inicia Sesión
+        .small-8.medium-7.large-7.small-centered.large-uncentered.medium-uncentered.columns
+          .nexus-img
+            img(src='img/Nexus5.png')
+          .iphone-img
+            img(src='img/iphone.png')
+    .footer
+      // Footer code here
+      span Descarga la app
+      img(src='img/photos/gplay.png', style='width: 100px;')
+      img(src='img/photos/appst.png', style='width: 100px;')
+    script(src='js/vendor/jquery.js')
+    script(src='js/foundation.min.js')
+    script.
+      $(document).foundation();

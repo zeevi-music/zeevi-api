@@ -1,27 +1,41 @@
-extends layout
-
-block content
-  .back(ng-controller="userCtrl")
-    .title
-      br
-      p EMX
-      button(ng-click="obtener_cercanos()", class="btncer")
-    .info 
-      h3 #{user}
-      
-      .esta(ng-show="cuadro")
-        br
-        div Id:
-        div(ng-bind="estac.id_estacionamiento")
-        br
-        div Precio:
-        div(ng-bind="estac.precio")
-        br
-        div Rating:
-        div(ng-bind="estac.rating")
-        br
-        div Cupo:
-        div(class="dis d{{estac.disponibilidad}}")
-
-
-    #map-canvas
+doctype html
+html(lang='')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='css/bar-style.css')
+    link(rel='stylesheet', href='css/bar.css')
+    link(rel='stylesheet', href='css/sections.css')
+    script(src='http://code.jquery.com/jquery-latest.min.js', type='text/javascript')
+    script(src='js/bar-script.js')
+    script(src='js/div_manager.js')
+    title zeevi Home
+  body
+    #container.back
+      // dentro de este div se cargará el contenido
+    #cssmenu.top-bar
+      ul
+        li
+          a(href='#')
+            img.logo(src='img/logo/zeevi_3.png')
+        li(onclick='load_news()')
+          a(href='#') Inicio
+        li(onclick='load_profile()')
+          a(href='#') Perfil
+        li(onclick='load_sol()')
+          a(href='#') Solicitudes
+        li.has-sub
+          a(href='#') Cuenta
+          ul
+            li
+              a(href='index.html') Cerrar Sesión
+            li
+              a(href='#') Otras opciones
+  script(type='text/javascript').
+    jQuery(document).ready(function() {
+    $('a.loader').click(function() {
+    $('#back').load('profile.html');
+    });
+    });
+  html

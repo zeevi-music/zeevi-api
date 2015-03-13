@@ -1,0 +1,60 @@
+
+body{
+  background: #fff;
+}
+
+header{
+  position: fixed;
+  background-color: #fff;
+  height: 40px;
+  width: 100%;
+  box-shadow: 0px 3px 3px #ddd;
+  z-index: 1;
+}
+
+.header-signup {
+  background-color: #fff;
+  box-shadow: 0px 3px 8px #f2f2f2;
+  z-index: 1;
+}
+
+h1{
+  color: #00b1ca;
+  text-align: center;
+  height: 25px;
+  padding-top: -5;
+  font-family: 'Slabo 27px', serif;
+}
+
+header h2{
+  color: #00b2ca;
+  text-align: right;
+}
+
+header h3{
+  color: #00b2ca;
+  text-align: right;
+}
+  
+.bound{
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.small-word{
+  font-size: 10px;
+}
+
+.footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:15vh;
+   width:100%;
+   background:#00b2ca;
+  padding: 15px;
+}
+
+.right{
+  text-align: right;
+}
