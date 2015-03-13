@@ -13,6 +13,7 @@ module.exports = function(router){
 		res.redirect();
 	});		
 
+	
 	router.post('/api/user/new', function(req,res){
 		var username = req.body.username;
 	});
