@@ -23,11 +23,11 @@ html(lang='',ng-app="app")
         li
           a(href='#')
             img.logo(src='/img/logo/zeevi_3.png')
-        li(onclick='load_news()')
+        li#inicio
           a(href='#') Inicio
-        li(onclick='load_profile()')
+        li#profile
           a(href='#') Perfil
-        li(onclick='load_sol()')
+        li#solicitud
           a(href='#') Solicitudes
         li.has-sub
           a(href='#') Cuenta
@@ -36,4 +36,27 @@ html(lang='',ng-app="app")
               a(href='index.html') Cerrar Sesión
             li
               a(href='#') Otras opciones
+              
+    
+    script.
+      $(document).ready(function(){
+        $("#inicio").click(function(){
+          $("#container").load("/htmls/news.html #news");
+          });
+        });
+        
+    script.
+      $(document).ready(function(){
+        $("#profile").click(function(){
+          $("#container").load("/htmls/profile.html #profile");
+          });
+        });  
+    
+    script.
+      $(document).ready(function(){
+        $("#solicitud").click(function(){
+          $("#container").load("/htmls/solicitud.html #sol");
+          });
+        });
+        
   html
