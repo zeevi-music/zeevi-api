@@ -1,5 +1,5 @@
 doctype html
-html(lang='')
+html(lang='',ng-app="app")
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -8,10 +8,14 @@ html(lang='')
     link(rel='stylesheet', href='/css/bar.css')
     link(rel='stylesheet', href='/css/sections.css')
     script(src='http://code.jquery.com/jquery-latest.min.js', type='text/javascript')
-    script(src='/js/bar-script.js')
+    script(src='/js/bar-script.js')    
     script(src='/js/div_manager.js')
+
+    script(src='/js/angular/angular.js')
+    script(src='/js/app.js')
+
     title zeevi Home
-  body(onload='load_news()')
+  body(onload='load_news()',ng-controller="userCtrl")
     #container.back
       // dentro de este div se cargará el contenido
     #cssmenu.top-bar
@@ -19,11 +23,11 @@ html(lang='')
         li
           a(href='#')
             img.logo(src='/img/logo/zeevi_3.png')
-        li(onclick='load_news()')
+        li#inicio
           a(href='#') Inicio
-        li(onclick='load_profile()')
+        li#profile
           a(href='#') Perfil
-        li(onclick='load_sol()')
+        li#solicitud
           a(href='#') Solicitudes
         li.has-sub
           a(href='#') Cuenta
@@ -32,4 +36,27 @@ html(lang='')
               a(href='index.html') Cerrar Sesión
             li
               a(href='#') Otras opciones
+              
+    
+    script.
+      $(document).ready(function(){
+        $("#inicio").click(function(){
+          $("#container").load("/htmls/news.html #news");
+          });
+        });
+        
+    script.
+      $(document).ready(function(){
+        $("#profile").click(function(){
+          $("#container").load("/htmls/profile.html #profile");
+          });
+        });  
+    
+    script.
+      $(document).ready(function(){
+        $("#solicitud").click(function(){
+          $("#container").load("/htmls/solicitud.html #sol");
+          });
+        });
+        
   html

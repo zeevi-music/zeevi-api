@@ -1,10 +1,8 @@
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div id="profile">
+
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/profile.css">
-  </head>
-  <body>
+
     <div class="top">
       <img src="/img/header/music.jpg" class="head-image"/>
       <!--Aquí irán los datos.-->
@@ -12,8 +10,8 @@
         <img src="/img/profile/mastodon.jpg"/>
       </div>
       <div id="data-container" class="data">
-        <p id="band_name">Nombre de la banda</p>
-        <p id="band_data">Datos de la Banda</p>
+        <p id="band_name">{{user.unsername}}</p>
+        <p id="band_data">{{user.genre}}</p>
       </div>
     </div>
     
@@ -30,5 +28,4 @@
       </div>
     </div>
     
-  </body>
-</html>
+</div>
