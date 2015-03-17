@@ -52,10 +52,21 @@ module.exports = function(router){
 		});
 	});
 
-	router.get('/api/users/:genre', function(req,res){
+	router.get('/api/venues/:genre', function(req,res){
 		var genre = req.params.genre;
 		user
 		.find({genre: genre, profile:2})
+		.exec(function(err,data){
+			if(err)
+				res.send(err)
+			res.status(200).json(data);
+		});
+	});
+
+	router.get('/api/bands/:genre', function(req,res){
+		var genre = req.params.genre;
+		user
+		.find({genre: genre, profile:1})
 		.exec(function(err,data){
 			if(err)
 				res.send(err)
