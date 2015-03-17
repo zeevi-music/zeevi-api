@@ -23,18 +23,17 @@ module.exports = function(router){
 		user.findOne({username: username}, function(err,user) {
 			console.log(err);
 
-			if(user === null){
-				console.log("No encontro");
+			if(user==null){
+				console.log("No encontro 1");
 				res.redirect('/login');
 			}
 			else{
-				var pass1 = user.password;
-				if(pass1 === passCifrado){
-					console.log('INICIO ')
+				if(user.password === passCifrado){
+					console.log('SESSION: '+req.session);
 					res.redirect('/user/home/'+username);
 				}
 				else{
-					console.log("No encontro");
+					console.log("No encontro 2");
 					res.redirect('/login');
 				}
 			}

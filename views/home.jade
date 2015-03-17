@@ -8,7 +8,7 @@ html(lang='',ng-app="app")
     link(rel='stylesheet', href='/css/bar.css')
     link(rel='stylesheet', href='/css/sections.css')
     script(src='http://code.jquery.com/jquery-latest.min.js', type='text/javascript')
-    script(src='/js/bar-script.js')    
+    script(src='/js/bar-script.js')
     script(src='/js/div_manager.js')
 
     script(src='/js/angular/angular.js')
@@ -33,30 +33,30 @@ html(lang='',ng-app="app")
           a(href='#') Cuenta
           ul
             li
-              a(href='index.html') Cerrar Sesión
+              a(href='/login') Cerrar Sesión
             li
               a(href='#') Otras opciones
-              
-    
+
+
     script.
       $(document).ready(function(){
         $("#inicio").click(function(){
           $("#container").load("/htmls/news.html #news");
           });
         });
-        
+
     script.
       $(document).ready(function(){
         $("#profile").click(function(){
           $("#container").load("/htmls/profile.html #profile");
           });
-        });  
-    
+        });
+
     script.
       $(document).ready(function(){
         $("#solicitud").click(function(){
           $("#container").load("/htmls/solicitud.html #sol");
           });
         });
-        
+
   html
