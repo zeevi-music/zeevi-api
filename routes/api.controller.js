@@ -21,24 +21,29 @@ module.exports = function(router){
 		var pass = req.body.password;
 		var passCifrado = cifrar(username,pass);
 		user.findOne({username: username}, function(err,user) {
-			console.log(err);
-
 			if(user==null){
-				console.log("No encontro 1");
+				console.log("Ese Username no existe");
 				res.redirect('/login');
 			}
 			else{
 				if(user.password === passCifrado){
-					console.log('SESSION: '+req.session);
+					// Creamos una sesion y almacenamos el username y el tipo de usuario
+					req.session.userName = username;
+					req.session.profile = user.profile;
 					res.redirect('/user/home/'+username);
 				}
 				else{
-					console.log("No encontro 2");
+					console.log("Password Incorrecto");
 					res.redirect('/login');
 				}
 			}
 
 		});
+	});
+
+	router.get('/api/user/logout', function(req,res){
+		req.session = null;
+		res.redirect('/');
 	});
 
 
