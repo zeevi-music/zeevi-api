@@ -1,70 +1,41 @@
 doctype html
-html(lang='',ng-app="app", ng-controller="userCtrl")
+html(lang='',ng-app="app")
   head
-    // Meta
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-
-    // Styles
     link(rel='stylesheet', href='/css/bar-style.css')
     link(rel='stylesheet', href='/css/bar.css')
     link(rel='stylesheet', href='/css/sections.css')
-
-
-    // Nav Bar
     script(src='http://code.jquery.com/jquery-latest.min.js', type='text/javascript')
-<<<<<<< HEAD
-    script(src='/js/bar-script.js')    
-=======
     script(src='/js/bar-script.js')
     script(src='/js/div_manager.js')
->>>>>>> d54207fe8d0742caf5a3e73de74746c95ab5909a
 
-    // Angular
-    script(src="https://code.angularjs.org/1.4.0-beta.5/angular.js")
-    script(src="/js/app/router.es5.js")
-    script(src='/js/app/app.js')
+    script(src='/js/angular/angular.js')
+    script(src='/js/app.js')
 
-    // Controllers     
-    script(src='/js/app/controllers/profile.controller.js')      
-    script(src='/js/app/controllers/user.controller.js')
-    script(src='/js/app/controllers/NewsController.js')
-    script(src='/js/app/controllers/DataController.js')
-    script(src='/js/app/controllers/RequestController.js')
-
-    // Services
-    script(src='/js/app/services/user.service.js')
-    
-    title zeevi Home
-
-  body(ng-controller="profileCtrl")
-    
+    title zeevi Solicitudes
+  body(onload='load_sol()',ng-controller="userCtrl")
+    #container.back
+      // dentro de este div se cargará el contenido
     #cssmenu.top-bar
       ul
         li
-          a(href='')
+          a(href='#')
             img.logo(src='/img/logo/zeevi_3.png')
         li#inicio
-          a(ng-link="news") Inicio
+          a(href='#') Inicio
         li#profile
-          a(ng-link="data") Perfil
+          a(href='#') Perfil
         li#solicitud
-<<<<<<< HEAD
-          a(ng-link="request") Solicitudes
-=======
           a(href='solicitudes') Solicitudes
->>>>>>> d54207fe8d0742caf5a3e73de74746c95ab5909a
         li.has-sub
-          a(href='') Cuenta
+          a(href='#') Cuenta
           ul
             li
               a(href='/api/user/logout') Cerrar Sesión
             li
               a(href='#') Otras opciones
-<<<<<<< HEAD
-    div(ng-viewport)
-=======
 
 
     script.
@@ -87,6 +58,5 @@ html(lang='',ng-app="app", ng-controller="userCtrl")
           $("#container").load("/htmls/solicitud.html #sol");
           });
         });
->>>>>>> d54207fe8d0742caf5a3e73de74746c95ab5909a
 
   html
