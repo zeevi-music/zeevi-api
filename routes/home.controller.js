@@ -2,7 +2,7 @@ var express = require('express'),
 	router 	= express.Router();
 
 var user_controller 	= require('./user.controller')(router),
-	api_controller 		= require('./api.controller')(router)
+	api_controller 		= require('./api/api.controller')(router);
 
 router.get('/', function(req, res) {
   res.render('index');

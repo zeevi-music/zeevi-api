@@ -10,8 +10,8 @@
         <img src="/img/profile/mastodon.jpg"/>
       </div>
       <div id="data-container" class="data">
-        <p id="band_name">{{user.unsername}}</p>
-        <p id="band_data">{{user.genre}}</p>
+        <p id="band_name">{{user.username}}</p>
+        <p ng-repeat="genre in user.genres" class="band_data">{{genre}}</p>
       </div>
     </div>
     
@@ -20,7 +20,14 @@
       
       <div class="basic-data-container">
         <div class="data-section-left">
-          Hola
+          
+        <form>
+          Ingresa un genero
+          <input type="text" ng-model="update.genero"> 
+          <input type="submit" ng-click = "update.change_genre()"> 
+
+        </form>
+
         </div>
         <div class="data-section-right">
           Adios

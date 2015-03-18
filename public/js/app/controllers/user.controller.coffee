@@ -1,5 +1,5 @@
-Controller = (scope, window, location, users) ->
-  
+Controller = (scope, window, location, users, Q) ->
+
   scope.user = {}
   scope.related = []
 
@@ -11,32 +11,51 @@ Controller = (scope, window, location, users) ->
 
   if (user.charAt(user.length-1) == '#')
     user = user.substring(0,lol[0].length-1) 
-    console.log "hay un #"
-  else 
-    console.log 'no lo hay'
 
   scope.user.username = user
-
-  console.log(scope.user.username);
   
+  get_data_from_api = () -> 
+    functions = {}    
 
-  users.get_all_user_data(scope.user.username).then (data) ->
+    functions.get_all_user_data = () ->
+      deferred = Q.defer()
     
-    scope.user = data.data
-    
-    users.get_all_users_by_genre(scope.user.genre).then (data) ->
+      users.get_all_user_data(scope.user.username)
+      .then (data) ->
+        scope.user = data.data
+        deferred.resolve scope.user
+        return
+
+      return deferred.promise 
+
+    functions.get_all_users_by_genre = (inf) ->
       
-      scope.related = data.data
-      console.log scope.related
-      return
-    return
-  return
+      #deferred = Q.defer()
+      
+      users.get_all_users_by_genre(scope.user.profile, scope.user.genres)
+      .then (data) ->
+        scope.related = data.data
+        #deferred.resolve()
+        return
+
+      return #deferred.promise
+
+    return functions
+
+  gD = get_data_from_api()
+
+  gD
+  .get_all_user_data()
+  .then gD.get_all_users_by_genre
+
+  return 
 
 Controller.$inject = [
   '$scope'
   '$window'
   '$location'
   'userService'
+  '$q'
 ]
 
 angular

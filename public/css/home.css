@@ -120,7 +120,7 @@ body{
       font-size: 35px;
       top: 60px;
     }
-    #band_data{
+    .band_data{
       position: fixed;
       color: whitesmoke;
       top: 120px;

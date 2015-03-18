@@ -6,11 +6,30 @@ Service = (http) ->
       method: 'GET'
       url: '/api/user/' + username
 
-  result.get_all_users_by_genre = (genre) ->
-    console.log genre
+  result.get_all_users_by_genre = (type,genre) ->
+    
+    url = '/api/'
+
+    if type == 1
+      url += 'venues/'
+
+    if type == 2
+      url += 'bands/'
+
+    url += genre[0]
+
     http
       method: 'GET'
-      url: '/api/users/' + genre
+      url: url
+
+  result.update_users_genres = (data) ->
+    console.log data
+    url = "/api/user/"+data.username
+
+    http
+      method: 'PUT'
+      url: url
+      data: data
 
   result
 

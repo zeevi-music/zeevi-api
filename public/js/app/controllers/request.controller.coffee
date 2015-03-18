@@ -3,4 +3,4 @@ Controller = () ->
 
 angular
 .module 'app'
-.controller 'dataCtrl', Controller
+.controller 'RequestController', Controller

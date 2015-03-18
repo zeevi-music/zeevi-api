@@ -5,4 +5,4 @@ Controller = function() {
   return console.log('Data');
 };
 
-angular.module('app').controller('requestCtrl', Controller);
+angular.module('app').controller('RequestController', Controller);

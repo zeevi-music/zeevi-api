@@ -11,15 +11,12 @@ html(lang='',ng-app="app", ng-controller="userCtrl")
     link(rel='stylesheet', href='/css/bar.css')
     link(rel='stylesheet', href='/css/sections.css')
 
-
     // Nav Bar
-    script(src='http://code.jquery.com/jquery-latest.min.js', type='text/javascript')
-<<<<<<< HEAD
-    script(src='/js/bar-script.js')    
-=======
-    script(src='/js/bar-script.js')
-    script(src='/js/div_manager.js')
->>>>>>> d54207fe8d0742caf5a3e73de74746c95ab5909a
+    script(src='/js/vendor/jquery.js')
+    script(src='/js/vendor/bar-script.js')    
+
+    // Q
+    script(src="/bower_components/q/q.js")
 
     // Angular
     script(src="https://code.angularjs.org/1.4.0-beta.5/angular.js")
@@ -29,9 +26,9 @@ html(lang='',ng-app="app", ng-controller="userCtrl")
     // Controllers     
     script(src='/js/app/controllers/profile.controller.js')      
     script(src='/js/app/controllers/user.controller.js')
-    script(src='/js/app/controllers/NewsController.js')
-    script(src='/js/app/controllers/DataController.js')
-    script(src='/js/app/controllers/RequestController.js')
+    script(src='/js/app/controllers/news.controller.js')
+    script(src='/js/app/controllers/data.controller.js')
+    script(src='/js/app/controllers/request.controller.js')
 
     // Services
     script(src='/js/app/services/user.service.js')
@@ -45,16 +42,14 @@ html(lang='',ng-app="app", ng-controller="userCtrl")
         li
           a(href='')
             img.logo(src='/img/logo/zeevi_3.png')
+
         li#inicio
           a(ng-link="news") Inicio
         li#profile
           a(ng-link="data") Perfil
         li#solicitud
-<<<<<<< HEAD
           a(ng-link="request") Solicitudes
-=======
-          a(href='solicitudes') Solicitudes
->>>>>>> d54207fe8d0742caf5a3e73de74746c95ab5909a
+
         li.has-sub
           a(href='') Cuenta
           ul
@@ -62,31 +57,7 @@ html(lang='',ng-app="app", ng-controller="userCtrl")
               a(href='/api/user/logout') Cerrar Sesión
             li
               a(href='#') Otras opciones
-<<<<<<< HEAD
+
     div(ng-viewport)
-=======
-
-
-    script.
-      $(document).ready(function(){
-        $("#inicio").click(function(){
-          $("#container").load("/htmls/news.html #news");
-          });
-        });
-
-    script.
-      $(document).ready(function(){
-        $("#profile").click(function(){
-          $("#container").load("/htmls/profile.html #profile");
-          });
-        });
-
-    script.
-      $(document).ready(function(){
-        $("#solicitud").click(function(){
-          $("#container").load("/htmls/solicitud.html #sol");
-          });
-        });
->>>>>>> d54207fe8d0742caf5a3e73de74746c95ab5909a
 
   html
