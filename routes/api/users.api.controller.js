@@ -35,11 +35,11 @@ module.exports = function(router){
 	router.put('/api/user/:username', function(req,res){
 		var username = req.params.username;
 		
-		console.log(req.params);
-
 		username = username.replace('_',' ');
+		
+		update_data = req.body;
 
-		var update = update_functions(req,res);
+		var update = update_functions(req,res,update_data);
 
 		update
 		.search_by_username(username)
@@ -61,7 +61,7 @@ function cifrar(user, pass) {
    return hmac
 }
 
-function update_functions (req,res)
+function update_functions (req,res, update_data)
 {
 	var functions = {};
 
@@ -84,9 +84,13 @@ function update_functions (req,res)
 		
 		var deferred = Q.defer();
 		
+		data.genres = update_data.genres;
+
 		data.save(function(err,inf){
-			if(err)
+			if(err){
+				console.log(err)
 				deferred.reject(new Error(err));
+			}
 			else
 				deferred.resolve(data.username)
 		});	

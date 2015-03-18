@@ -14,7 +14,9 @@ Controller = (scope, users) ->
 		users
 		.update_users_genres(data)
 		.then (data) ->
+			#console.log(data)
 			scope.update.genero = data.data.genres[0]
+			scope.user = data.data
 
 Controller.$inject = ['$scope','userService']
 

@@ -13,7 +13,8 @@ Controller = function(scope, users) {
     data = scope.user;
     data.genres[0] = scope.update.genero;
     return users.update_users_genres(data).then(function(data) {
-      return scope.update.genero = data.data.genres[0];
+      scope.update.genero = data.data.genres[0];
+      return scope.user = data.data;
     });
   };
 };

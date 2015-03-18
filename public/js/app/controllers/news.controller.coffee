@@ -1,4 +1,7 @@
 Controller = (location) ->
+
+	
+	
 	return
 
 Controller.$inject = ['$location']
