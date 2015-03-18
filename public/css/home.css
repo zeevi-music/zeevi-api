@@ -120,7 +120,7 @@ body{
       font-size: 35px;
       top: 60px;
     }
-    #band_data{
+    .band_data{
       position: fixed;
       color: whitesmoke;
       top: 120px;
@@ -183,4 +183,24 @@ body{
 .query-container:hover{
   background-color: #eee;
   box-shadow: 0px 1px 3px #bbb;
+}
+
+.contact-name{
+  font-family: sans-serif;
+  color: #666;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.contact-genre{
+  font-family: sans-serif;
+  color: #666;
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.contact-addres{
+  font-family: sans-serif;
+  color: #666;
+  font-size: 20px;
 }

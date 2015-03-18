@@ -1,62 +1,63 @@
 doctype html
-html(lang='',ng-app="app")
+html(lang='',ng-app="app", ng-controller="userCtrl")
   head
+    // Meta
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    // Styles
     link(rel='stylesheet', href='/css/bar-style.css')
     link(rel='stylesheet', href='/css/bar.css')
     link(rel='stylesheet', href='/css/sections.css')
-    script(src='http://code.jquery.com/jquery-latest.min.js', type='text/javascript')
-    script(src='/js/bar-script.js')    
-    script(src='/js/div_manager.js')
 
-    script(src='/js/angular/angular.js')
-    script(src='/js/app.js')
+    // Nav Bar
+    script(src='/js/vendor/jquery.js')
+    script(src='/js/vendor/bar-script.js')    
 
+    // Q
+    script(src="/bower_components/q/q.js")
+
+    // Angular
+    script(src="https://code.angularjs.org/1.4.0-beta.5/angular.js")
+    script(src="/js/app/router.es5.js")
+    script(src='/js/app/app.js')
+
+    // Controllers     
+    script(src='/js/app/controllers/profile.controller.js')      
+    script(src='/js/app/controllers/user.controller.js')
+    script(src='/js/app/controllers/news.controller.js')
+    script(src='/js/app/controllers/data.controller.js')
+    script(src='/js/app/controllers/request.controller.js')
+
+    // Services
+    script(src='/js/app/services/user.service.js')
+    
     title zeevi Home
-  body(onload='load_news()',ng-controller="userCtrl")
-    #container.back
-      // dentro de este div se cargará el contenido
+
+  body(ng-controller="profileCtrl")
+    
     #cssmenu.top-bar
       ul
         li
-          a(href='#')
+          a(href='')
             img.logo(src='/img/logo/zeevi_3.png')
+
         li#inicio
-          a(href='#') Inicio
+          a(ng-link="news") Inicio
         li#profile
-          a(href='#') Perfil
+          a(ng-link="data") Perfil
         li#solicitud
-          a(href='#') Solicitudes
+          a(ng-link="request") Solicitudes
+
         li.has-sub
-          a(href='#') Cuenta
+          a(href='') Cuenta
           ul
             li
-              a(href='index.html') Cerrar Sesión
+              a(href='/api/user/logout') Cerrar Sesión
             li
               a(href='#') Otras opciones
-              
-    
-    script.
-      $(document).ready(function(){
-        $("#inicio").click(function(){
-          $("#container").load("/htmls/news.html #news");
-          });
-        });
-        
-    script.
-      $(document).ready(function(){
-        $("#profile").click(function(){
-          $("#container").load("/htmls/profile.html #profile");
-          });
-        });  
-    
-    script.
-      $(document).ready(function(){
-        $("#solicitud").click(function(){
-          $("#container").load("/htmls/solicitud.html #sol");
-          });
-        });
-        
+
+    div(ng-viewport)
+
   html
