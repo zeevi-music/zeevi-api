@@ -1,14 +1,10 @@
-angular
-.module('app')
-.factory 'userService', Service
-
 Service = (http) ->
   result = {}
 
   result.get_all_user_data = (username) ->
     http
       method: 'GET'
-      url: '/api/user/' + 'Slayer'
+      url: '/api/user/' + username
 
   result.get_all_users_by_genre = (genre) ->
     console.log genre
@@ -19,3 +15,7 @@ Service = (http) ->
   result
 
 Service.$inject = [ '$http' ]
+
+angular
+.module('app')
+.factory 'userService', Service

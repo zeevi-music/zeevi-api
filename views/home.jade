@@ -1,5 +1,5 @@
 doctype html
-html(lang='',ng-app="app")
+html(lang='',ng-app="app", ng-controller="userCtrl")
   head
     // Meta
     meta(charset='utf-8')
@@ -11,6 +11,7 @@ html(lang='',ng-app="app")
     link(rel='stylesheet', href='/css/bar.css')
     link(rel='stylesheet', href='/css/sections.css')
 
+
     // Nav Bar
     script(src='http://code.jquery.com/jquery-latest.min.js', type='text/javascript')
     script(src='/js/bar-script.js')    
@@ -18,56 +19,40 @@ html(lang='',ng-app="app")
     // Angular
     script(src="https://code.angularjs.org/1.4.0-beta.5/angular.js")
     script(src="/js/app/router.es5.js")
-
     script(src='/js/app/app.js')
-    script(src='/js/app/profile.controller.js')      
-    script(src='/js/app/user.controller.js')
-    script(src='/js/app/user.service.js')
 
+    // Controllers     
+    script(src='/js/app/controllers/profile.controller.js')      
+    script(src='/js/app/controllers/user.controller.js')
+    script(src='/js/app/controllers/NewsController.js')
+    script(src='/js/app/controllers/DataController.js')
+    script(src='/js/app/controllers/RequestController.js')
+
+    // Services
+    script(src='/js/app/services/user.service.js')
+    
     title zeevi Home
 
-  body(onload='load_news()',ng-controller="userCtrl")
-    #container.back
-      // dentro de este div se cargará el contenido
+  body(ng-controller="profileCtrl")
+    
     #cssmenu.top-bar
       ul
         li
-          a(href='#')
+          a(href='')
             img.logo(src='/img/logo/zeevi_3.png')
         li#inicio
-          a(href='#') Inicio
+          a(ng-link="news") Inicio
         li#profile
-          a(href='#') Perfil
+          a(ng-link="data") Perfil
         li#solicitud
-          a(href='#') Solicitudes
+          a(ng-link="request") Solicitudes
         li.has-sub
-          a(href='#') Cuenta
+          a(href='') Cuenta
           ul
             li
               a(href='index.html') Cerrar Sesión
             li
               a(href='#') Otras opciones
-              
-    
-    script.
-      $(document).ready(function(){
-        $("#inicio").click(function(){
-          $("#container").load("/htmls/news.html #news");
-          });
-        });
-        
-    script.
-      $(document).ready(function(){
-        $("#profile").click(function(){
-          $("#container").load("/htmls/profile.html #profile");
-          });
-        });  
-    
-    script.
-      $(document).ready(function(){
-        $("#solicitud").click(function(){
-          $("#container").load("/htmls/solicitud.html #sol");
-          });
-        });
-        
+    div(ng-viewport)
+
   html
