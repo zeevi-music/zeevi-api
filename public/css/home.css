@@ -2,6 +2,8 @@ body{
   width: 100%;
 }
 
+
+
 .top{
   background: #00b2ca;
   position: fixed;
@@ -30,9 +32,10 @@ body{
   position: fixed;
   color: white;
   font-size: 40px;
-  top: 40px;
-  left: 200px;
-  font-family: 'Roboto Slab', serif;
+  top: 50px;
+  left: 210px;
+  font-family: sans-serif;
+  font-weight: bold;
 }
 
 .head-image{
@@ -120,7 +123,7 @@ body{
       font-size: 35px;
       top: 60px;
     }
-    #band_data{
+    .band_data{
       position: fixed;
       color: whitesmoke;
       top: 120px;
@@ -165,7 +168,7 @@ body{
       position: fixed;
       color: white;
       font-size: 35px;
-      top: 48px;
+      top: 55px;
       left: 150px;
     }
 }
@@ -173,14 +176,127 @@ body{
 .query-container{
   background-color: #f2f2f2;
   width: 80%;
-  height: 100px;
   margin: 0 auto;
   margin-top: 35px;
   padding: 15px;
   box-shadow: 0px 1px 5px #ccc;
+  -webkit-animation: mymove 1s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 1s infinite;
 }
 
-.query-container:hover{
-  background-color: #eee;
-  box-shadow: 0px 1px 3px #bbb;
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    from {left: 0px;}
+    to {left: 200px;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mynewmove {
+    from {top: 0px;}
+    to {top: 200px;}
+}
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 200px;}
+}
+
+@keyframes mynewmove {
+    from {top: 0px;}
+    to {top: 200px;}
+}
+
+.contact-name{
+  font-family: sans-serif;
+  color: #666;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.contact-genre{
+  font-family: sans-serif;
+  color: #666;
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.contact-addres{
+  font-family: sans-serif;
+  color: #666;
+  font-size: 20px;
+}
+
+.container-left{
+  height: 100%;
+  width: 75%;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.container-right{
+  height: 100%;
+  display: inline-block;
+}
+
+.request-button{
+  height: 50px;
+  width: 120px;
+  background-color: #FF7A00;
+  border-radius: 25px;
+  border-width: 0px;
+  outline: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0 auto;
+  box-shadow: 0px 1px 5px #888;
+  vertical-align: middle;
+  position: relative;
+  left: 10px;
+}
+
+.request-button:hover{
+  background-color: #FF9900;
+}
+
+.request-button:active{
+  background-color: #EE8800;
+  box-shadow: 0px 1px 3px #555;
+}
+
+.circle-button{
+  border-radius: 50%;
+  border-width: 0px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0 auto;
+  box-shadow: 0px 1px 5px #888;
+  vertical-align: middle;
+  position: relative;
+  left: 10px;
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.ok{
+  background-color: green; 
+}
+
+.cancel{
+  background-color: crimson;
+}
+
+.twhu{
+  width: 150px;
+  text-align: center;
+}
+
+.settup-container{
+  height: 130px;
+  width: 100%;
+  text-align: center;
+  font-family: sans-serif;
 }
