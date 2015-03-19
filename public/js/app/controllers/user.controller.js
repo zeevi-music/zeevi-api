@@ -12,16 +12,21 @@ Controller = function(scope, location, users) {
     path_parts = path.split('/');
     user = path_parts[0];
     if (user.charAt(user.length - 1) === '#') {
-      user = user.substring(0, lol[0].length - 1);
+      user = user.substring(0, path_parts[0].length - 1);
     }
     return scope.user.username = user;
   };
   get_username();
-  users.get_data_from_api().get_all_user_data().then(function(data) {
-    return console.log(data);
+  users.get_data_from_api().get_all_user_data(scope.user.username).then(function(data) {
+    scope.user = data;
+    console.log(scope.user);
+    users.get_data_from_api().get_all_users_by_genre(data).then(function(data) {
+      scope.related = data;
+      console.log(scope.related);
+    });
   });
 };
 
-Controller.$inject = ['$scope', '$location', 'userService'];
+Controller.$inject = ['$scope', '$location', 'userService', 'eventService'];
 
 angular.module('app').controller('userCtrl', Controller);

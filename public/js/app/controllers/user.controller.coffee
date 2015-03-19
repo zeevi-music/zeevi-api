@@ -12,7 +12,7 @@ Controller = (scope, location, users) ->
     user = path_parts[0]
 
     if (user.charAt(user.length-1) == '#')
-      user = user.substring(0,lol[0].length-1) 
+      user = user.substring(0, path_parts[0].length-1) 
 
     scope.user.username = user
   
@@ -20,16 +20,30 @@ Controller = (scope, location, users) ->
   
   users
   .get_data_from_api()
-  .get_all_user_data()
+  .get_all_user_data(scope.user.username)
   .then (data) ->
-    console.log data
+    scope.user = data    
+    console.log scope.user
+
+    users
+      .get_data_from_api()
+      .get_all_users_by_genre(data)
+      .then (data) ->
+        scope.related = data
+        console.log scope.related
+        return
+
+    return
+
+  
 
   return 
 
 Controller.$inject = [
   '$scope'
   '$location'
-  'userService'
+  'userService',
+  'eventService'
 ]
 
 angular
