@@ -1,4 +1,4 @@
-Service = (http) ->
+Service = (scope, http, Q) ->
   result = {}
 
   result.get_all_user_data = (username) ->
@@ -31,9 +31,35 @@ Service = (http) ->
       url: url
       data: data
 
+  result.get_data_from_api = () -> 
+    functions = {}    
+
+    functions.get_all_user_data = () ->
+      deferred = Q.defer()
+    
+      result.get_all_user_data(scope.user.username)
+      .then (data) ->
+        scope.user = data.data
+        deferred.resolve scope.user
+        return
+
+      return deferred.promise 
+
+    functions.get_all_users_by_genre = (inf) ->
+      result.get_all_users_by_genre(scope.user.profile, scope.user.genres)
+      .then (data) ->
+
+        scope.related = data.data
+        
+        return
+
+      return 
+
+    return functions
+
   result
 
-Service.$inject = [ '$http' ]
+Service.$inject = ['$scope', '$http', '$Q' ]
 
 angular
 .module('app')

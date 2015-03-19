@@ -1,4 +1,9 @@
-Controller = (scope) ->
+Controller = (scope, users) ->
+
+	users
+  	.get_data_from_api()
+  	.get_all_users_by_genre
+
 	data = {}
 	scope.request_new_event = (card_name)->
 		console.log scope.user
@@ -21,7 +26,7 @@ Controller = (scope) ->
 		return
 	return
 
-Controller.$inject = ['$scope']
+Controller.$inject = ['$scope', 'userService']
 
 angular
 .module 'app'
