@@ -13,6 +13,9 @@ Controller = function(router, location) {
       path: "/request",
       component: "request"
     }, {
+      path: "/event",
+      component: "event"
+    }, {
       path: '/',
       redirectTo: '/news'
     }
