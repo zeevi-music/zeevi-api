@@ -3,6 +3,7 @@ var user 	= require('../../models/user');
 module.exports = function(router){	
 
 	//Get places from genre
+	//api/events/venue/username
 	router.get('/api/venues/:genre', function(req,res){
 		var genre = req.params.genre;
 

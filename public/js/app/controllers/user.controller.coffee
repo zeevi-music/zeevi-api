@@ -1,61 +1,49 @@
-Controller = (scope, window, location, users, Q) ->
+Controller = (scope, location, users) ->
 
   scope.user = {}
   scope.related = []
 
-  fullUrl=  location.absUrl()
-  path = fullUrl.substring(32)
-  lol = path.split('/')
+  get_username = () ->
 
-  user = lol[0]
+    fullUrl=  location.absUrl()
+    path = fullUrl.substring(32)
+    path_parts = path.split('/')
 
-  if (user.charAt(user.length-1) == '#')
-    user = user.substring(0,lol[0].length-1) 
+    user = path_parts[0]
 
-  scope.user.username = user
+    if (user.charAt(user.length-1) == '#')
+      user = user.substring(0, path_parts[0].length-1) 
+
+    scope.user.username = user
   
-  get_data_from_api = () -> 
-    functions = {}    
+  get_username()
+  
+  users
+  .get_data_from_api()
+  .get_all_user_data(scope.user.username)
+  .then (data) ->
+    scope.user = data    
+    console.log scope.user
 
-    functions.get_all_user_data = () ->
-      deferred = Q.defer()
-    
-      users.get_all_user_data(scope.user.username)
+    users
+      .get_data_from_api()
+      .get_all_users_by_genre(data)
       .then (data) ->
-        scope.user = data.data
-        deferred.resolve scope.user
+        scope.related = data
+        console.log scope.related
         return
 
-      return deferred.promise 
+    return
 
-    functions.get_all_users_by_genre = (inf) ->
-      
-      #deferred = Q.defer()
-      
-      users.get_all_users_by_genre(scope.user.profile, scope.user.genres)
-      .then (data) ->
-        scope.related = data.data
-        #deferred.resolve()
-        return
-
-      return #deferred.promise
-
-    return functions
-
-  gD = get_data_from_api()
-
-  gD
-  .get_all_user_data()
-  .then gD.get_all_users_by_genre
+  
 
   return 
 
 Controller.$inject = [
   '$scope'
-  '$window'
   '$location'
-  'userService'
-  '$q'
+  'userService',
+  'eventService'
 ]
 
 angular

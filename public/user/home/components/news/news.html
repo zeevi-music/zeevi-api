@@ -15,10 +15,10 @@
           <div class="contact-name">{{news.username}}</div>
           <div class="contact-addres">{{news.addres}}</div>
           <div class="contact-genre">{{news.genre[0]}}</div>
-          <div class="contact-genre">HOLA</div>
+          <!--<div class="contact-genre">HOLA</div>-->
         </div> 
         <div class="container-right">
-          <input type="button" value="Solicitar" class="request-button"/>
+          <input type="button" ng-click="request_new_event(news.username)" value="Solicitar" class="request-button"/>
         </div>
       </div>
     </div> 

@@ -3,6 +3,16 @@ var user 	= require('../../models/user'),
 
 module.exports = function(router){
 
+	//Get data of a user
+	router.get('/api/user/:username', function(req,res){
+		var username = req.params.username;
+		user
+		.find({username: username})
+		.exec(function(err,data){
+			res.status(200).json(data[0]);
+		});
+	});
+
 	// Create a new User
 	router.post('/api/user/new', function(req,res){
 		var username 	= req.body.username;
@@ -19,17 +29,7 @@ module.exports = function(router){
 		newUser.save();
 
 		res.redirect('/user/home/'+username);
-	});
-
-	//Get data of a user
-	router.get('/api/user/:username', function(req,res){
-		var username = req.params.username;
-		user
-		.findOne({username: username})
-		.exec(function(err,data){
-			res.status(200).json(data);
-		});
-	});
+	});	
 
 	//Update data of a user
 	router.put('/api/user/:username', function(req,res){
