@@ -11,9 +11,15 @@
     <div class="section-container">
       <!--Aquí irá el contenido de las secciones.-->
       <div ng-repeat="news in related" class="query-container">
-        <div class="contact-name">{{news.username}}</div>
-        <div class="contact-addres">{{news.addres}}</div>
-        <div class="contact-genre">{{news.genre}}</div>
+        <div class="container-left">
+          <div class="contact-name">{{news.username}}</div>
+          <div class="contact-addres">{{news.addres}}</div>
+          <div class="contact-genre">{{news.genre[0]}}</div>
+          <div class="contact-genre">HOLA</div>
+        </div> 
+        <div class="container-right">
+          <input type="button" value="Solicitar" class="request-button"/>
+        </div>
       </div>
     </div> 
 </div>
