@@ -1,12 +1,12 @@
-var mongoose = require('./events'),
+var mongoose = require('./models'),
   Schema = mongoose.Schema;
 
 var eventSchema = new Schema({
   band_name: {type: String, require: true},
   venue_name: {type: String, require: true},
-  date: null,
-  hour: null,
-  status: false,
+  date: "",
+  hour: "",
+  active: false,
   rejected: false
 });
 
