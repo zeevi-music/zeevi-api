@@ -7,12 +7,13 @@ Controller = (scope, events) ->
 	else
 		profile = "venue"
 
-	url = "/api/events/"+profile+scope.user.username
+	url = "/api/events/"+profile+"/"+scope.user.username
 
 	events
 	.get_events_by_username(url)
 	.then (data) ->
 		scope.events = data
+		console.log scope.events
 
 	scope.resolve_event = (selection) ->		
 
