@@ -5,6 +5,7 @@ Controller = (router,location) ->
 		{path: "/news", component: "news" }
 		{path: "/data", component: "data" }
 		{path: "/request", component: "request" }
+		{path: "/event", component: "event" }
 		{path: '/', redirectTo: '/news' }
 	]
 

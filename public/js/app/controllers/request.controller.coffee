@@ -1,6 +1,4 @@
 Controller = (scope, events) ->
-	
-	scope.event = {}
 
 	if scope.user.profile == 1
 		profile = "band"
@@ -15,21 +13,22 @@ Controller = (scope, events) ->
 		scope.events = data.data
 		console.log scope.events
 
-	scope.resolve_event = (selection) ->		
-
+	scope.resolve_event = (event, selection) ->		
+		#console.log(event)
+		
 		if selection == "confirm"
-			scope.event.active 		= true
-			scope.event.rejected 	= false
+			event.active 	= true
+			event.rejected 	= false
+
 
 		if selection == "reject"
-			scope.event.active 		= false
-			scope.event.rejected 	= true
+			event.active 	= false
+			event.rejected 	= true
 		
 		events
-		.update_event(url,data)
+		.update_event(url,event)
 		.then (data) ->
-			console.log(data)
-
+			console.log(data.data)
 
 Controller.$inject = [
   '$scope'

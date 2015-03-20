@@ -36,7 +36,7 @@
             <div class="ok circle-button" onclick="viewSetup()">
               <i class="fa fa-check"></i>
             </div>
-            <div class="cancel circle-button" ng-click="resolve_event('reject')" onclick="disscardEvent()">
+            <div class="cancel circle-button" ng-click="resolve_event(event,'reject')" onclick="disscardEvent()">
               <i class="fa fa-times"></i>
             </div>
           </div>
@@ -51,16 +51,16 @@
             <input type="date" ng-model="event.date" id="fecha"/>
           </div>
           <div class="block-form"> 
-            <label for="hora">Hora</label>
-            <input type="time" ng-model="event.hour" id="hora"/>
+            <label for="hora">Hora</label>            
+            <input type="time" ng-model="event.hour" id="hora"/>            
           </div><br/>
           <div class="block-form" style="width: 200px;"> 
-            <input type="button" value="Confirmar" class="request-button">
+            <input type="button" value="Confirmar" ng-click="resolve_event(event,'confirm')" class="request-button">
           </div>
           <div class="block-form" style="width: 200px;"> 
             <input type="button" value="Cancelar" class="request-button" onclick="hideSetup()">
           </div>
-          <input type="button" value="Confirmar" ng-click="resolve_event('confirm')" class="request-button">
+          <!--<input type="button" value="Confirmar" ng-click="resolve_event('confirm')" class="request-button">-->
         </div>
       </div>
       

@@ -19,6 +19,11 @@ Service = (http) ->
       method: 'GET'
       url: url
 
+  result.get_active_events = () ->
+    http 
+      method: 'GET'
+      url: '/api/events/active'
+
   return result
 
 Service.$inject = ['$http']

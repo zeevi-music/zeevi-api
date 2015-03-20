@@ -22,7 +22,19 @@ Controller = function(scope, users, events) {
       };
     }
     events.new_event(data).then(function(data) {
-      console.log(data);
+      var event_exist_status;
+      event_exist_status = data.data;
+      if (event_exist_status === "1") {
+        alert("Solicitud pendiente!");
+      }
+      if (event_exist_status === "2") {
+        alert("Han rechazado tu evento :C !");
+      }
+      if (event_exist_status === "3") {
+        alert("Han Aceptado tu evento :D !");
+      } else {
+        alert("Evento solicitado exitosa mente");
+      }
     });
   };
   scope.lol = "lol";

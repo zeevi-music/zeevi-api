@@ -3,7 +3,6 @@ var Controller;
 
 Controller = function(scope, events) {
   var profile, url;
-  scope.event = {};
   if (scope.user.profile === 1) {
     profile = "band";
   } else {
@@ -14,17 +13,17 @@ Controller = function(scope, events) {
     scope.events = data.data;
     return console.log(scope.events);
   });
-  return scope.resolve_event = function(selection) {
+  return scope.resolve_event = function(event, selection) {
     if (selection === "confirm") {
-      scope.event.active = true;
-      scope.event.rejected = false;
+      event.active = true;
+      event.rejected = false;
     }
     if (selection === "reject") {
-      scope.event.active = false;
-      scope.event.rejected = true;
+      event.active = false;
+      event.rejected = true;
     }
-    return events.update_event(url, data).then(function(data) {
-      return console.log(data);
+    return events.update_event(url, event).then(function(data) {
+      return console.log(data.data);
     });
   };
 };

@@ -16,11 +16,16 @@
     </div>
     <div class="section-container">
       <!--Aquí irá el contenido de las secciones.-->
-      <div class="query-container">
-        Evento 1
-      </div>
-      <div class="query-container">
-        Evento 2
+      <div ng-repeat="active_event in active_events" class="query-container">
+        Evento 
+        <br>
+        Banda: {{ active_event.band_name }}
+        <br>
+        Lugar: {{ active_event.venue_name }}
+        <br>
+        Fecha: {{ active_event.date | date: 'MMMM d, y' }}
+        <br>
+        Hora: {{ active_event.hour | date: 'h:mm a' }}
       </div>
 
     </div>

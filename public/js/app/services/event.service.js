@@ -24,6 +24,12 @@ Service = function(http) {
       url: url
     });
   };
+  result.get_active_events = function() {
+    return http({
+      method: 'GET',
+      url: '/api/events/active'
+    });
+  };
   return result;
 };
 
