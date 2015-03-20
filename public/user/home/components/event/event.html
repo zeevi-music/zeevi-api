@@ -1,6 +1,7 @@
 <div id="sol">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/event.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <div class="top-small">
@@ -16,16 +17,18 @@
     </div>
     <div class="section-container">
       <!--Aquí irá el contenido de las secciones.-->
-      <div ng-repeat="active_event in active_events" class="query-container">
-        Evento 
-        <br>
-        Banda: {{ active_event.band_name }}
-        <br>
-        Lugar: {{ active_event.venue_name }}
-        <br>
-        Fecha: {{ active_event.date | date: 'MMMM d, y' }}
-        <br>
-        Hora: {{ active_event.hour | date: 'h:mm a' }}
+      <div ng-repeat="active_event in active_events" class="query-container event-data">
+        <div class="event-band-name">
+          {{ active_event.band_name }}
+        </div>
+        <div class="event-place">
+         Lugar: {{ active_event.venue_name }}
+        </div>
+        <div class="event-data">
+          {{ active_event.date | date: 'MMMM d, y' }}
+          &nbsp;
+          {{ active_event.hour | date: 'h:mm a' }}
+        </div>  
       </div>
 
     </div>
