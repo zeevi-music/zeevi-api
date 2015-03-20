@@ -7,6 +7,7 @@ var eventSchema = new Schema({
   request_to: 	{type: String, 	require: true},
   date: 		{type: Date, 	default: null},
   hour: 		{type: Date, 	default: null},
+  genre: 		{type: String,	default: null},
   active: 		{type: Boolean, default: false},
   rejected: 	{type: Boolean, default: false}
 });

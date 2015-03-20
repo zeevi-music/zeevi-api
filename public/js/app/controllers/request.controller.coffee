@@ -24,6 +24,8 @@ Controller = (scope, events) ->
 		if selection == "reject"
 			event.active 	= false
 			event.rejected 	= true
+
+		evet.genre = scope.user.genres[0]
 		
 		events
 		.update_event(url,event)

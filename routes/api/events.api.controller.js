@@ -72,6 +72,7 @@ module.exports = function (router) {
       if (req.body.active === true) {
         doc.date = req.body.date;
         doc.hour = req.body.hour;
+        doc.genre = req.body.genre
       }
 
       doc.save(function (err, doc) {
