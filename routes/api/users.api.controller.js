@@ -29,17 +29,17 @@ module.exports = function(router){
 		newUser.save();
 
 		res.redirect('/user/home/'+username);
-	});	
+	});
 
 	//Update data of a user
 	router.put('/api/user/:username', function(req,res){
 		var username = req.params.username;
-		
+
 		username = username.replace('_',' ');
-		
+
 		update_data = req.body;
 
-		var update = update_functions(req,res,update_data);
+		var update = update_functions(res,update_data);
 
 		update
 		.search_by_username(username)
@@ -50,7 +50,7 @@ module.exports = function(router){
 			res.send("Error"+err)
 		})
 	});
-		
+
 };
 
 
@@ -61,29 +61,30 @@ function cifrar(user, pass) {
    return hmac
 }
 
-function update_functions (req,res, update_data)
+function update_functions (res, update_data)
 {
 	var functions = {};
 
 	functions.search_by_username = function (username) {
-		
-		var deferred = Q.defer();		
+
+		var deferred = Q.defer();
+
 		user
 		.findOne({username: username})
 		.exec(function(err, data){
 			if(err)
 				deferred.reject(new Error(err));
-			else 
-				deferred.resolve(data);			
+			else
+				deferred.resolve(data);
 		});
 
-		return deferred.promise;	
+		return deferred.promise;
 	}
 
 	functions.update_genres_of_user = function (data) {
-		
+
 		var deferred = Q.defer();
-		
+
 		data.genres = update_data.genres;
 
 		data.save(function(err,inf){
@@ -93,7 +94,7 @@ function update_functions (req,res, update_data)
 			}
 			else
 				deferred.resolve(data.username)
-		});	
+		});
 
 		return deferred.promise;
 
