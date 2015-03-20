@@ -173,6 +173,8 @@ body{
     }
 }
 
+/*------ Containers ------*/
+
 .query-container{
   background-color: #f2f2f2;
   width: 80%;
@@ -180,30 +182,6 @@ body{
   margin-top: 35px;
   padding: 15px;
   box-shadow: 0px 1px 5px #ccc;
-  -webkit-animation: mymove 1s infinite; /* Chrome, Safari, Opera */
-    animation: mymove 1s infinite;
-}
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes mymove {
-    from {left: 0px;}
-    to {left: 200px;}
-}
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes mynewmove {
-    from {top: 0px;}
-    to {top: 200px;}
-}
-
-@keyframes mymove {
-    from {left: 0px;}
-    to {left: 200px;}
-}
-
-@keyframes mynewmove {
-    from {top: 0px;}
-    to {top: 200px;}
 }
 
 .contact-name{
@@ -227,20 +205,57 @@ body{
 }
 
 .container-left{
-  height: 100%;
-  width: 75%;
-  display: inline-block;
-  margin-bottom: 20px;
+  width: 600px;
+  height: 100px;
+  padding: 10px;
+  float:left;
+  margin-right: 15px;
 }
 
 .container-right{
-  height: 100%;
-  display: inline-block;
+  position: relative;
+  height: 100px;
+  padding: 10px;
+  vertical-align: middle;
+  overflow:hidden;
+  text-align: center;
 }
+
+.inner-container{
+  position: absolute;
+  top: 70%;
+  left: 0px;
+  width: 100%;
+  height: 3em;
+  margin-top: -3em;
+}
+
+@media all and (max-width: 1050px) {
+  .container-left{
+    width: 380px;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .container-left{
+    width: 280px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .container-left{
+    width: 95%;
+  }
+  .container-right{
+    height: 80px;
+  }
+}
+
+/*----------------- Buttons*/
 
 .request-button{
   height: 50px;
-  width: 120px;
+  width: 60%;
   background-color: #FF7A00;
   border-radius: 25px;
   border-width: 0px;
@@ -253,7 +268,6 @@ body{
   box-shadow: 0px 1px 5px #888;
   vertical-align: middle;
   position: relative;
-  left: 10px;
 }
 
 .request-button:hover{
@@ -268,6 +282,8 @@ body{
 .circle-button{
   border-radius: 50%;
   border-width: 0px;
+  height: 25px;
+  width: 25px;
   color: white;
   font-family: sans-serif;
   font-weight: 500;
@@ -276,27 +292,36 @@ body{
   box-shadow: 0px 1px 5px #888;
   vertical-align: middle;
   position: relative;
-  left: 10px;
   margin-left: 10px;
   padding: 10px;
+  display: inline-block;
 }
 
 .ok{
-  background-color: green; 
+  background-color: #39B91E; 
+}
+
+.ok:hover{
+  background-color: #58C641;
+}
+
+.ok:active{
+  background-color: #25940E;
 }
 
 .cancel{
-  background-color: crimson;
+  background-color: #D62334;
+}
+
+.cancel:hover{
+  background-color: #E54C5B;
+}
+
+.cancel:active{
+  background-color: #AB101F;
 }
 
 .twhu{
   width: 150px;
   text-align: center;
-}
-
-.settup-container{
-  height: 130px;
-  width: 100%;
-  text-align: center;
-  font-family: sans-serif;
 }
