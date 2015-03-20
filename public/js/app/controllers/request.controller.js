@@ -23,8 +23,9 @@ Controller = function(scope, events) {
       scope.event.active = false;
       scope.event.rejected = true;
     }
-    console.log(url);
-    return console.log(scope.event);
+    return events.update_event(url, data).then(function(data) {
+      return console.log(data);
+    });
   };
 };
 

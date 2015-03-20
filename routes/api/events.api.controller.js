@@ -29,12 +29,17 @@ module.exports = function (router) {
     }else{
       query = {venue_name: username};
     }
-    var update = {active: true};
+    
     Event.findOne(query, function(err, doc){
         if (err) return res.send(500, { error: err });
-        console.log(doc.venue_name);
-        doc.active = true;
-        doc.save();
+        doc.active = req.body.active,
+        doc.rejected = req.body.rejected
+        doc.save(function(err, doc){
+          if(err)
+            res.send(err);
+          else
+            res.status(200).json(doc)
+        })
         res.send("Success Update");
     });
   });

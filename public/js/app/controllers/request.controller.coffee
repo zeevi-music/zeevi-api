@@ -24,10 +24,12 @@ Controller = (scope, events) ->
 		if selection == "reject"
 			scope.event.active 		= false
 			scope.event.rejected 	= true
+		
+		events
+		.update_event(url,data)
+		.then (data) ->
+			console.log(data)
 
-		console.log(url);
-		console.log(scope.event);
-		#events.update_event(url,data)
 
 Controller.$inject = [
   '$scope'
