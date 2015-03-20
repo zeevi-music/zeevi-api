@@ -7,9 +7,11 @@ module.exports = function (router) {
   router.post('/api/events/new', function (req, res) {
     var band_name   = req.body.band_name;
     var venue_name  = req.body.venue_name;
+    var request_to  = req.body.request_to;
     var newEvent = new Event({
       band_name:  band_name,
       venue_name: venue_name,
+      request_to: request_to
     });
     newEvent.save(function (err, data) {
       if (err) {
@@ -39,8 +41,7 @@ module.exports = function (router) {
             res.send(err);
           else
             res.status(200).json(doc)
-        })
-        res.send("Success Update");
+        });
     });
   });
 
@@ -50,9 +51,9 @@ module.exports = function (router) {
     console.log(" GET events "+userType);
     var query;
     if(userType == 'band'){
-      query = {band_name: username};
+      query = {band_name: username, request_to: username};
     }else{
-      query = {venue_name: username};
+      query = {venue_name: username, request_to: username};
     }
     Event.find(query,function(err,data){
       if(err){
