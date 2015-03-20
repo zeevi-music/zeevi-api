@@ -11,6 +11,19 @@ Service = function(http) {
       data: data
     });
   };
+  result.update_event = function(url, data) {
+    return http({
+      method: 'PUT',
+      url: url,
+      data: data
+    });
+  };
+  result.get_events_by_username = function(url) {
+    return http({
+      method: 'GET',
+      url: url
+    });
+  };
   return result;
 };
 

@@ -33,7 +33,7 @@
             <div class="ok circle-button" onclick="viewSetup()">
               <i class="fa fa-check"></i>
             </div>
-            <div class="cancel circle-button" onclick="disscardEvent()">
+            <div class="cancel circle-button" ng-click="resolve_event('reject')" onclick="disscardEvent()">
               <i class="fa fa-times"></i>
             </div>
           </div>
@@ -42,12 +42,12 @@
         <div class="settup-container" id="conainer1" style="display: none;">
           <p>Confirma la fecha y hora del evento</p>
           <label for="fecha">Fecha</label>
-          <input type="date" id="fecha"/>
+          <input type="date" ng-model="event.date" id="fecha"/>
           <br/>
           <label for="hora">Hora</label>
-          <input type="time" id="hora"/>
+          <input type="time" ng-model="event.hour" id="hora"/>
           <br/><br/>
-          <input type="button" value="Confirmar" class="request-button">
+          <input type="button" value="Confirmar" ng-click="resolve_event('confirm')" class="request-button">
         </div>
       </div>
     </div>

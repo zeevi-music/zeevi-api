@@ -1,4 +1,4 @@
-Controller = (scope, window, users, events) ->
+Controller = (scope, users, events) ->
 
 	data = {}
 
@@ -42,7 +42,6 @@ Controller = (scope, window, users, events) ->
 
 Controller.$inject = [
   '$scope'
-  '$window'
   'userService'
   'eventService'
 ]

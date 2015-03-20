@@ -7,6 +7,18 @@ Service = (http) ->
       url: '/api/events/new'
       data: data
 
+  result.update_event = (url,data) ->
+
+    http
+      method: 'PUT'
+      url: url
+      data: data
+
+  result.get_events_by_username = (url) ->
+    http
+      method: 'GET'
+      url: url
+
   return result
 
 Service.$inject = ['$http']
