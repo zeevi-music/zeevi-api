@@ -14,23 +14,23 @@ html
     .row
       .small-6.large-centered.columns.bound
         h1
-          | Sign up for zeevi_
+          | Regístrate en Zeevi
       .small-6.large-centered.columns.bound
         form(method="post",action="/api/user/new")
           .row
             .large-12.columns
-              input(type='text', name='username', placeholder='Username')
+              input(type='text', name='username', placeholder='Nombre de usuario')
           .row
             .large-12.columns
-              input(type='password', name='password' placeholder='password')
+              input(type='password', name='password' placeholder='Contraseña')
           .row
             .large-12.columns
               input(type='text', name='email' placeholder='e-mail')
           .row
             .large-12.columns
-              label Register as:
+              label Tipo de registro:
               input#band(type='radio', name='tipo', value='1')
-              label(for='band') Band
+              label(for='band') Banda
               input#venue(type='radio', name='tipo', value='2')
               label(for='venue') Venue
               input#fan(type='radio', name='tipo', value='3')
@@ -38,13 +38,13 @@ html
           .row
             .large-12.columns
 
-              input(type="submit", class="expand button",value="Sign up!")
+              input(type="submit", class="expand button",value="Enviar")
               p.small-word
-                | By pressing the "Sign up!" button, you acknowledge and agree to all of the terms and conditions.
+                | Al presionar el botón de "Enviar", usted acepta todos los terminos y condiciones.
         .row
           .large-12.columns
             p
-              | Do you already have a zeevi account?
-              a(href='../login') Log in.
+              | ¿Ya eres miebro de Zeevi?
+              a(href='../login') Entrar.
     .footer
       // footer

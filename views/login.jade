@@ -3,7 +3,7 @@ html.no-js(lang='en')
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Login
+    title Zeevi music
     link(rel='stylesheet', href='css/foundation.css')
     link(rel='stylesheet', href='css/style.css')
     link(rel='stylesheet', href='css/login.css')
@@ -13,27 +13,27 @@ html.no-js(lang='en')
     .row.title-login
       .small-6.large-centered.columns.bound
         h1
-          | Sign in for zeevi_
+          | Ingresa a tu cuenta
     form.login-form(method='post',action="/api/user/login")
       .row
         .small-6.large-6.small-centered.large-centered.columns
-          input(type='text', name='username', placeholder='Username')
+          input(type='text', name='username', placeholder='Nombre de usuario')
       .row
         .small-6.large-6.small-centered.large-centered.columns
-          input(type='password',name='password', placeholder='Password')
+          input(type='password',name='password', placeholder='Contraseña')
       .row
         .small-6.large-6.small-centered.large-centered.columns
-          input(type='submit',value="Log In").button.expand
-      .row
-        .small-6.large-6.small-centered.large-centered.columns
-          p
-            | Forgot you password?
-            a(href='index.html') Reset Password
+          input(type='submit',value="Ingresa").button.expand
       .row
         .small-6.large-6.small-centered.large-centered.columns
           p
-            | Don't have an account?
-            a(href='../signup') Sign up.
+            | ¿Olvidaste tu contraseña?
+            a(href='/') Obenten nueva contraseña
+      .row
+        .small-6.large-6.small-centered.large-centered.columns
+          p
+            | ¿Aún no eres miembro?
+            a(href='../signup') Regístrate.
     .footer
       // Footer code here
     script(src='js/vendor/jquery.js')
