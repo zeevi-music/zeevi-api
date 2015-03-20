@@ -11,7 +11,7 @@ Controller = function(scope, events) {
   }
   url = "/api/events/" + profile + "/" + scope.user.username;
   events.get_events_by_username(url).then(function(data) {
-    scope.events = data;
+    scope.events = data.data;
     return console.log(scope.events);
   });
   return scope.resolve_event = function(selection) {

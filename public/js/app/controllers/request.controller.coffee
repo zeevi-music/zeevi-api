@@ -12,7 +12,7 @@ Controller = (scope, events) ->
 	events
 	.get_events_by_username(url)
 	.then (data) ->
-		scope.events = data
+		scope.events = data.data
 		console.log scope.events
 
 	scope.resolve_event = (selection) ->		
