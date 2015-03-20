@@ -10,6 +10,7 @@ Controller = (scope, users, events) ->
 			data = 
 				band_name: 	scope.user.username
 				venue_name: card_name
+				request_to: card_name
 
 		if(scope.user.profile == 2)
 			console.log scope.user.username+' have a new event with ' + card_name
@@ -17,6 +18,7 @@ Controller = (scope, users, events) ->
 			data = 
 				venue_name: scope.user.username
 				band_name: 	card_name		
+				request_to: card_name
 
 		events
 		.new_event(data)

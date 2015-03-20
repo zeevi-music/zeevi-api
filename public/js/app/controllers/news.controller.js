@@ -9,14 +9,16 @@ Controller = function(scope, users, events) {
       console.log(scope.user.username + ' have a new event in ' + card_name);
       data = {
         band_name: scope.user.username,
-        venue_name: card_name
+        venue_name: card_name,
+        request_to: card_name
       };
     }
     if (scope.user.profile === 2) {
       console.log(scope.user.username + ' have a new event with ' + card_name);
       data = {
         venue_name: scope.user.username,
-        band_name: card_name
+        band_name: card_name,
+        request_to: card_name
       };
     }
     events.new_event(data).then(function(data) {
