@@ -186,6 +186,15 @@ body{
   box-shadow: 0px 1px 5px #ccc;
 }
 
+.no-more{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 35px;
+  padding: 15px;
+  text-align: center;
+  opacity: .5;
+}
+
 .contact-name{
   font-family: sans-serif;
   color: #666;
