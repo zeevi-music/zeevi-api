@@ -1,0 +1,33 @@
+
+<link rel='stylesheet', href='/css/home.css'></link>
+<div class="top-small">
+  <!-- Aquí irán los datos.--><img src="/img/header/music.jpg" class="head-image"/>
+  <div id="profile-img crop" class="prof-img-small"><img src="/img/profile/mastodon.jpg"/></div>
+  <div id="data-container" class="data">
+    <p id="section-name">Inicio</p>
+  </div>
+</div>
+<div id="news">    
+    <div class="section-container">
+      
+      <!--Aquí irá el contenido de las secciones.-->
+      
+      <div ng-repeat="news in related" class="query-container">
+        <div class="container-left">
+          <div class="contact-name">{{news.username}}</div>
+          <div class="contact-addres">{{news.addres}}</div>
+          <div class="contact-genre">{{news.genre[0]}}</div>
+          <!--<div class="contact-genre">HOLA</div>-->
+        </div> 
+        <div class="container-right">
+          <div class="inner-container">
+           <input type="button" ng-click="request_new_event(news.username)" value="Solicitar" class="request-button"/>
+          </div>
+        </div>
+      </div>
+      
+      <div class="no-more">
+        <img src="/img/rsc/zeevi.png"/>
+      </div>
+    </div> 
+</div>

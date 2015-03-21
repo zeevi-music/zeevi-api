@@ -1,27 +1,67 @@
-extends layout
+doctype html
+html(lang='',ng-app="app", ng-controller="userCtrl")
+  head
+    // Meta
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
 
-block content
-  .back(ng-controller="userCtrl")
-    .title
-      br
-      p EMX
-      button(ng-click="obtener_cercanos()", class="btncer")
-    .info 
-      h3 #{user}
-      
-      .esta(ng-show="cuadro")
-        br
-        div Id:
-        div(ng-bind="estac.id_estacionamiento")
-        br
-        div Precio:
-        div(ng-bind="estac.precio")
-        br
-        div Rating:
-        div(ng-bind="estac.rating")
-        br
-        div Cupo:
-        div(class="dis d{{estac.disponibilidad}}")
+    // Styles
+    link(rel='stylesheet', href='/css/bar-style.css')
+    link(rel='stylesheet', href='/css/bar.css')
+    link(rel='stylesheet', href='/css/sections.css')
 
+    // Nav Bar
+    script(src='/js/vendor/jquery.js')
+    script(src='/js/vendor/bar-script.js')
 
-    #map-canvas
+    // Q
+    script(src="/bower_components/q/q.js")
+
+    // Angular
+    script(src="https://code.angularjs.org/1.4.0-beta.5/angular.js")
+    script(src="/js/app/router.es5.js")
+    script(src='/js/app/app.js')
+
+    // Services
+    script(src='/js/app/services/user.service.js')
+    script(src='/js/app/services/event.service.js')
+
+    // Controllers
+    script(src='/js/app/controllers/user.controller.js')
+    script(src='/js/app/controllers/news.controller.js')
+    script(src='/js/app/controllers/data.controller.js')
+    script(src='/js/app/controllers/request.controller.js')
+    script(src='/js/app/controllers/profile.controller.js')
+    script(src='/js/app/controllers/event.controller.js')
+
+    title zeevi Home
+
+  body(ng-controller="profileCtrl")
+
+    #cssmenu.top-bar
+      ul
+        li
+          a(href='')
+            img.logo(src='/img/logo/zeevi_3.png')
+
+        li#inicio
+          a(ng-link="news") Inicio
+        li#profile
+          a(ng-link="data") Perfil
+        li#solicitud
+          a(ng-link="request") Solicitudes
+        li#event
+          a(ng-link="event") Eventos
+
+        li.has-sub
+          a(href='') Cuenta
+          ul
+            li
+              a(href='/api/user/logout') Cerrar Sesión
+            li
+              a(href='#') Otras opciones
+
+    div(ng-viewport)
+
+  html

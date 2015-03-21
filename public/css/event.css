@@ -1,0 +1,21 @@
+.event-data{
+  color: #666;
+  font-family: sans-serif;
+}
+
+.event-band-name{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 3x;
+}
+
+.event-place{
+  font-weight: lighter;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.event-data{
+  font-size: 15px;
+  font-weight: lighter;
+}

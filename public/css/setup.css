@@ -1,0 +1,20 @@
+.settup-container{
+  width: 100%;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.title-form{
+  padding: 10px;
+  width: 95%;
+  color: #666;
+  font-size: 25px;
+}
+
+.block-form{
+  margin-right: 5px;
+  display: inline-block;
+  color: #777;
+  font-size: 16px;
+  padding: 10px;
+}

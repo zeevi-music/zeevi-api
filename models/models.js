@@ -3,6 +3,6 @@ var mongoose;
 
 mongoose = require('mongoose');
 
-mongoose.connect('mongodb://emx:emx123@dbh45.mongolab.com:27457/emx');
+mongoose.connect('mongodb://zeevi:123456@ds029317.mongolab.com:29317/zeevi');
 
 module.exports = mongoose;

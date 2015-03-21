@@ -1,0 +1,114 @@
+<div id="profile">
+
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/profile.css">
+
+    <div class="top">
+      <img src="/img/header/music.jpg" class="head-image"/>
+      <!--Aquí irán los datos.-->
+      <div id="profile-img" class="prof-img">
+        <img src="/img/profile/mastodon.jpg"/>
+      </div>
+      <div id="data-container" class="data">
+        <p id="band_name">{{user.username}}</p>
+        <p ng-repeat="genre in user.genres" class="band_data">{{genre}}</p>
+      </div>
+    </div>
+    
+    <div class="section-container">
+      <!--Aquí irá el contenido de las secciones.-->
+      
+      <div class="basic-data-container">
+        <div class="data-section-left">
+          
+        <form>
+          <div class="row-container">
+            E-Mail:
+            {{user.email}}
+          </div>  
+          <div ng-if="user.profile==2" class="row-container">
+            Direccion:              
+            {{user.addres}}
+          </div>      
+          <div ng-if="user.profile==1" class="row-container">
+            Historia:              
+            {{user.history}}
+          </div>
+          <div ng-if="user.profile==1" class="row-container">
+            Ciudad:              
+            {{user.city}}
+          </div>
+          <div class="row-container">
+            Telefono:
+            {{user.phone}}
+          </div>  
+          <div class="row-container">
+            Facebook:
+            {{user.facebook}}
+          </div>  
+          <div class="row-container">
+            Twitter:
+            {{user.twitter}}
+          </div>  
+          <div ng-if="user.profile==1" class="row-container">
+            Ciudad:              
+            {{user.soundcloud}}
+          </div>
+          <div ng-if="user.profile==2" class="row-container">
+            Ciudad:              
+            {{user.foursquare}}
+          </div>
+        </form>
+
+        </div>
+        <div class="data-section-right">
+          <div class="cube-container">          
+          </div>
+          <div class="cube-container">
+            <div class="row-container">
+              Genero:
+            <input type="text"  ng-model="update.genero">               
+            </div>  
+            <div class="row-container" ng-if="user.profile==1" >
+              Historia:
+              <input  type="text" ng-model="update.history">    
+            </div>
+
+            <div class="row-container" ng-if="user.profile==2" >
+              Direccion:
+              <input  type="text"  ng-model="update.addres"> 
+            </div>           
+
+            <div class="row-container">
+              Teléfono:  
+              <input type="text" ng-model="update.phone"> 
+            </div>
+            
+            <div class="row-container">
+              Facebook:
+              <input type="text" ng-model="update.facebook">
+            </div>
+            <div class="row-container">
+              Twitter:
+              <input type="text" ng-model="update.twitter"> 
+
+            </div>
+
+            <div ng-if="user.profile==1" class="row-container">
+              Soundcloud:
+              <input type="text" ng-model="update.soundcloud">               
+            </div>
+
+            <div ng-if="user.profile==2" class="row-container">
+              Foursquare:
+              <input type="text" ng-model="update.foursquare">               
+            </div>
+
+            <input type="submit" ng-click = "update.change_genre()"> 
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>
