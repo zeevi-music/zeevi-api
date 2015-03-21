@@ -86,8 +86,15 @@ function update_functions (res, update_data)
 		var deferred = Q.defer();
 
 		data.genres = update_data.genres		
-		data.addres = update_data.addres,
+		data.addres = update_data.addres
 		data.history = update_data.history
+
+		data.phone = update_data.phone
+		data.facebook = update_data.facebook
+		data.twitter = update_data.twitter
+		data.soundcloud = update_data.soundcloud
+		data.foursquare = update_data.foursquare
+		data.city = update_data.city
 
 		data.save(function(err,inf){
 			if(err){

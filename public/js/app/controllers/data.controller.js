@@ -5,6 +5,7 @@ Controller = function(scope, users) {
   var genero;
   scope.update = {};
   genero = scope.user.genres[0];
+  scope.update = scope.user;
   scope.update.genero = genero;
   return scope.update.change_genre = function() {
     var data;
@@ -13,6 +14,12 @@ Controller = function(scope, users) {
     data.genres[0] = scope.update.genero;
     data.history = scope.update.history;
     data.addres = scope.update.addres;
+    data.phone = scope.update.phone;
+    data.facebook = scope.update.facebook;
+    data.twitter = scope.update.twitter;
+    data.soundcloud = scope.update.soundcloud;
+    data.foursquare = scope.update.foursquare;
+    data.city = scope.update.city;
     return users.update_users_genres(data).then(function(data) {
       scope.update.genero = data.data.genres[0];
       return scope.user = data.data;

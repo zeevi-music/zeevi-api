@@ -22,49 +22,90 @@
         <div class="data-section-left">
           
         <form>
-          <input type="text" placeholder="Género" ng-model="update.genero"> 
-          <br/>
-          <input ng-if="user.profile==1" type="text" placeholder="Historia"  ng-model="update.history">    
-          <input ng-if="user.profile==2" type="text" placeholder="Direccion" ng-model="update.addres"> 
-          <br>
-          <input type="submit" ng-click = "update.change_genre()"> 
-
+          <div class="row-container">
+            E-Mail:
+            {{user.email}}
+          </div>  
+          <div ng-if="user.profile==2" class="row-container">
+            Direccion:              
+            {{user.addres}}
+          </div>      
+          <div ng-if="user.profile==1" class="row-container">
+            Historia:              
+            {{user.history}}
+          </div>
+          <div ng-if="user.profile==1" class="row-container">
+            Ciudad:              
+            {{user.city}}
+          </div>
+          <div class="row-container">
+            Telefono:
+            {{user.phone}}
+          </div>  
+          <div class="row-container">
+            Facebook:
+            {{user.facebook}}
+          </div>  
+          <div class="row-container">
+            Twitter:
+            {{user.twitter}}
+          </div>  
+          <div ng-if="user.profile==1" class="row-container">
+            Ciudad:              
+            {{user.soundcloud}}
+          </div>
+          <div ng-if="user.profile==2" class="row-container">
+            Ciudad:              
+            {{user.foursquare}}
+          </div>
         </form>
 
         </div>
         <div class="data-section-right">
+          <div class="cube-container">          
+          </div>
           <div class="cube-container">
-            <div ng-if="user.profile==2" class="row-container">
-              Direccion:              
-              {{user.addres}}
-            </div>            
-            <div ng-if="user.profile==1" class="row-container">
-              Historia:              
-              {{user.history}}
+            <div class="row-container">
+              Genero:
+            <input type="text"  ng-model="update.genero">               
+            </div>  
+            <div class="row-container" ng-if="user.profile==1" >
+              Historia:
+              <input  type="text" ng-model="update.history">    
             </div>
-            <br>
+
+            <div class="row-container" ng-if="user.profile==2" >
+              Direccion:
+              <input  type="text"  ng-model="update.addres"> 
+            </div>           
 
             <div class="row-container">
               Teléfono:  
               <input type="text" ng-model="update.phone"> 
             </div>
+            
             <div class="row-container">
-              e-mail:
-              {{user.email}}
+              Facebook:
+              <input type="text" ng-model="update.facebook">
             </div>
-          </div>
-          <br>
+            <div class="row-container">
+              Twitter:
+              <input type="text" ng-model="update.twitter"> 
 
-          <div class="cube-container">
-            <div class="row-container">
-              Facebook.
             </div>
-            <div class="row-container">
-              Twitter.
+
+            <div ng-if="user.profile==1" class="row-container">
+              Soundcloud:
+              <input type="text" ng-model="update.soundcloud">               
             </div>
-            <div class="row-container">
-              Soundcloud.
+
+            <div ng-if="user.profile==2" class="row-container">
+              Foursquare:
+              <input type="text" ng-model="update.foursquare">               
             </div>
+
+            <input type="submit" ng-click = "update.change_genre()"> 
+
           </div>
         </div>
       </div>

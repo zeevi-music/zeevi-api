@@ -8,9 +8,15 @@ var userSchema = new Schema({
 	profile: 	{type: Number, require: true},
 	addres: 	{type: String, default: null},
 	history: 	{type: String, default: null},
-	phone:    	{type: String, default: null},
 	genres: 	[],
-	requests: 	[]
+	requests: 	[],
+
+	city: 		{type: String, default: null},
+	phone: 		{type: String, default: null},
+	facebook: 	{type: String, default: null},
+	twitter: 	{type: String, default: null},
+	soundcloud: {type: String, default: null},
+	foursquare: {type: String, default: null}
 });
 
 module.exports = mongoose.model('user',userSchema);
