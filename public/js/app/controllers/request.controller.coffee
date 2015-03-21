@@ -25,7 +25,7 @@ Controller = (scope, events) ->
 			event.active 	= false
 			event.rejected 	= true
 
-		evet.genre = scope.user.genres[0]
+		event.genre = scope.user.genres[0]
 		
 		events
 		.update_event(url,event)
