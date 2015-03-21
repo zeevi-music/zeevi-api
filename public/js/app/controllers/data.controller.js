@@ -3,7 +3,6 @@ var Controller;
 
 Controller = function(scope, users) {
   var genero;
-  console.log('Data');
   scope.update = {};
   genero = scope.user.genres[0];
   scope.update.genero = genero;
@@ -12,6 +11,8 @@ Controller = function(scope, users) {
     console.log("change");
     data = scope.user;
     data.genres[0] = scope.update.genero;
+    data.history = scope.update.history;
+    data.addres = scope.update.addres;
     return users.update_users_genres(data).then(function(data) {
       scope.update.genero = data.data.genres[0];
       return scope.user = data.data;

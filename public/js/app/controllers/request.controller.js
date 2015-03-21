@@ -22,7 +22,7 @@ Controller = function(scope, events) {
       event.active = false;
       event.rejected = true;
     }
-    evet.genre = scope.user.genres[0];
+    event.genre = scope.user.genres[0];
     return events.update_event(url, event).then(function(data) {
       return console.log(data.data);
     });

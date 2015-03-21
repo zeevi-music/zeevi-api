@@ -23,7 +23,7 @@ module.exports = function(router){
 			username: username,
 			email: req.body.email,
 			password: passCifrado,
-			profile: req.body.tipo
+			profile: req.body.tipo,
 		});
 
 		newUser.save();
@@ -85,7 +85,9 @@ function update_functions (res, update_data)
 
 		var deferred = Q.defer();
 
-		data.genres = update_data.genres;
+		data.genres = update_data.genres		
+		data.addres = update_data.addres,
+		data.history = update_data.history
 
 		data.save(function(err,inf){
 			if(err){

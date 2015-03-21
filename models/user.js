@@ -6,6 +6,9 @@ var userSchema = new Schema({
 	email: 		{type: String, require: true},
 	password: 	{type: String, require: true},
 	profile: 	{type: Number, require: true},
+	addres: 	{type: String, default: null},
+	history: 	{type: String, default: null},
+	phone:    	{type: String, default: null},
 	genres: 	[],
 	requests: 	[]
 });
