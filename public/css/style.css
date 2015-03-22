@@ -75,17 +75,45 @@ header h3{
 }
 
 .footer {
-   position:fixed;
-   left:0px;
-   bottom:0px;
-   height:15vh;
-   width:100%;
-   background:#00b2ca;
+  position: relative;
+  display: inline-block;
+  margin-top: 85vh;
+  height: 15vh;
+  width: 100%;
+  background: #00b2ca;
   padding: 15px;
   padding-left: 60px;
   z-index: 5;
 }
 
+.main-container{
+  display: block;
+  height: 100vh;
+}
+
+.white{
+  background-color: #fff;
+}
+
+.blue{
+  background-color: #00b2ca;
+}
+
+.img-container{
+  width: 40%;
+  height: 85%;
+  margin: 5% 5%;
+  background-color: #efefef;
+  display: inline-block;
+}
+
+.text-container{
+  width: 40%;
+  height: 85%;
+  margin: 5% 5%;
+  background-color: #efefef;
+  display: inline-block;
+}
 
 .iphone-img{
 	display: inline-block;
