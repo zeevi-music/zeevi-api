@@ -42,3 +42,15 @@ html.no-js(lang='en')
     script(src='js/foundation/foundation.min.js')
     script.
       $(document).foundation();
+
+    //script(src="http://connect.soundcloud.com/sdk.js")
+      script.
+      SC.initialize({
+        client_id: 'ff1c523e54b98a8ad06ee497faeb09be'
+      });
+      // find all tracks with the genre 'punk' that have a tempo greater than 120 bpm.
+      SC.get('/tracks', { genres: 'pop', bpm: { from: 1 } }, function(tracks) {
+        console.log(tracks);
+      });
+      
+
