@@ -2,6 +2,7 @@
 
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/profile.css">
+    <script type="text/javascript" src="/js/vendor/event-handler.js"/>
 
     <div class="top">
       <img src="/img/header/music.jpg" class="head-image"/>
@@ -62,8 +63,7 @@
 
         </div>
         <div class="data-section-right">
-          <div class="cube-container">          
-          </div>
+          
           <div class="cube-container">
             <div class="row-container">
               Genero:
@@ -105,8 +105,33 @@
             </div>
 
             <input type="submit" ng-click = "update.change_genre()"> 
-
+            
           </div>
+          
+          <div class="cube-container">
+            
+            <div class="row-conainer">
+              Eventos realizados.
+            </div>
+            
+            <div class="row-conainer">
+              <h1> 43 </h1>
+            </div>
+            
+            
+            <div class="row-conainer">
+              Rating del Usuario.
+            </div>
+            
+            <div class="rating row-container">
+              <span onClick="rating(5)">☆</span>
+              <span onClick="rating(4)">☆</span>
+              <span onClick="rating(3)">☆</span>
+              <span onClick="rating(2)">☆</span>
+              <span onClick="rating(1)">☆</span>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>

@@ -17,3 +17,6 @@ function disscardEvent(){
   parent.removeChild(child);
 }
 
+function rating(rating){
+  alert("Calificaste al usuario con " + rating + " estrellas.");
+}

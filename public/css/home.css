@@ -333,3 +333,22 @@ body{
   width: 150px;
   text-align: center;
 }
+
+/*-----------Rating*/
+
+.rating > span:hover:before {
+  content: "\2605";
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  font-size: 30px;
+  
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+  color: #FF9900;
+}

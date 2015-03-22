@@ -32,10 +32,12 @@
         width: 90%;
       float: none;
       margin-bottom: 30px;
+      height:auto !important
     }
     .data-section-right{
         margin: 0 auto;
         width: 90%;
+      height:auto !important;
     }
 }
 
