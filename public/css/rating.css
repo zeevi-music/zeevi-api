@@ -1,0 +1,36 @@
+/*-----------Rating*/
+
+.rating > span:hover:before {
+  content: "\2605";
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  font-size: 30px;
+  
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+  color: #FF9900;
+}
+
+
+.rating-small > span:hover:before {
+  content: "\2605";
+}
+
+.rating-small {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  font-size: 20px;
+  
+}
+.rating-small > span:hover:before,
+.rating-small > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+  color: #FF9900;
+}
