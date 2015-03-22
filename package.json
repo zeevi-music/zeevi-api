@@ -1,27 +1,26 @@
 {
   "name": "zeevi",
   "version": "1.0.0",
-  "private": true,
+  "main": "app.js",  
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "bower": "*",
-    "colors": "*",
-    "cookie-parser": "*",
-    "body-parser": "*",
-    "express": "*",
-    "debug": "*",
-    "geolib": "*",
-    "express-session": "*",
-    "jade": "*",
-    "mongoose": "*",
-    "morgan": "*",
-    "q": "*",
-    "query-string": "*",
-    "request": "*",
-    "stylus": "*",
-    "serve-favicon": "*"
+    "bower": "^1.3.12",
+    "colors": "^1.0.3",
+    "body-parser": "^1.10.2",
+    "cookie-parser": "^1.3.4",
+    "debug": "^2.1.2",
+    "express": "^4.11.2",
+    "express-session": "^1.10.3",
+    "geolib": "^2.0.14",
+    "jade": "^1.9.2",
+    "mongoose": "^3.8.24",
+    "morgan": "^1.5.1",
+    "q": "^1.2.0",
+    "query-string": "^1.0.0",
+    "request": "^2.53.0",
+    "serve-favicon": "^2.2.0",
+    "stylus": "^0.42.3"
   }
 }
-
