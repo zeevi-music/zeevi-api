@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/profile.css">
     <link rel="stylesheet" href="/css/rating.css">
+    <link rel="stylesheet" href="/css/popup.css">
     <script type="text/javascript" src="/js/vendor/event-handler.js"/>
 
     <div class="top">
@@ -16,9 +17,62 @@
         <p ng-repeat="genre in user.genres" class="band_data">{{genre}}</p>
       </div>
     </div>
+  
     
+  
     <div class="section-container">
       <!--Aquí irá el contenido de las secciones.-->
+      
+       <div class="darkener" id="dark" style="display:none"></div>
+      
+      <div class="popup-container" id="menu" style="display:none">
+        
+        <div class="row-contanier menu-info">
+          Actualiza los datos de tu perfil.
+        </div>
+        
+        <div class="row-container">
+          <input type="text" placeholder="Género" ng-model="update.genero">               
+        </div>  
+        
+        <div class="row-container" ng-if="user.profile==1" >
+          <input  type="text" placeholder="Historia" ng-model="update.history">    
+        </div>
+
+        <div class="row-container" ng-if="user.profile==2" >
+          <input  type="text" placeholder="Dirección" ng-model="update.addres"> 
+        </div>           
+
+        <div class="row-container">
+          <input type="text" placeholder="Teléfono" ng-model="update.phone"> 
+        </div>
+            
+        <div class="row-container">
+          <input type="text" placeholder="Facebook" ng-model="update.facebook">
+        </div>
+        
+        <div class="row-container">
+          <input type="text" placeholder="Twitter" ng-model="update.twitter"> 
+        </div>
+
+        <div ng-if="user.profile==1" class="row-container">
+          <input type="text" placeholder="Soundcloud" ng-model="update.soundcloud">               
+        </div>
+
+        <div ng-if="user.profile==2" class="row-container">
+          <input type="text" placeholder="Foursquare" ng-model="update.foursquare">               
+        </div>
+
+        <div class="row-container center">
+          <input type="submit" ng-click = "update.change_genre()" style="width:200px;">                
+        </div>
+        
+        <div class="row-container center">
+          <input type="submit" onClick="hideMenu()" value="Cancelar" style="width:200px;">
+        </div>
+            
+      </div>
+      
       
       <div class="basic-data-container">
         <div class="data-section-left">
@@ -60,11 +114,18 @@
             Ciudad:              
             {{user.foursquare}}
           </div>
+          
+          <div class="row-container center">
+            <input type="submit" onClick="showMenu()" value="Editar Perfil" style="width:200px;">
+          </div>
+          
         </form>
 
         </div>
+        
         <div class="data-section-right">
           
+          <!--
           <div class="cube-container">
             <div class="row-container">
               Genero:
@@ -108,6 +169,8 @@
             <input type="submit" ng-click = "update.change_genre()"> 
             
           </div>
+
+          -->
           
           <div class="cube-container">
             
