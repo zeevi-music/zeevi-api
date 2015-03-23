@@ -10,8 +10,9 @@
 .popup-container{
   position: fixed;
   top: 200px;
+  bottom: 0px;
+  left: -340px;
   background-color: whitesmoke;
-  height: 100%;
   z-index: 9;
   padding: 35px;
 }

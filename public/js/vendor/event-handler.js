@@ -27,15 +27,13 @@ function showMenu(){
   
   $(shadow).fadeIn("fast");
   
-  menu.style.display = "";
-  $(menu).animate({width: "260px"}, 300);
+  $(menu).animate({left: "+=340px"}, 300);
 }
 
 function hideMenu(){
   var shadow = document.getElementById("dark");
   var menu = document.getElementById("menu");
   
-  $(menu).animate({width: "280px"});
-  menu.style.display = "none";
+  $(menu).animate({left: "-=340px"}, 300);
   $(shadow).fadeOut("fast");
 }
